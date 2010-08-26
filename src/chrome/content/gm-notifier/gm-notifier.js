@@ -667,7 +667,7 @@ gm_notifier.prototype.updateLabels = function(aIconClicked, aSkipNewMailCheck) {
     }
 
     if (document.getElementById("gm-notifier-statusbar")) {
-      document.getElementById("gm-notifier-statusbar").setAttribute("label", unread);
+      document.getElementById("gm-notifier-statusbar").setAttribute("label", unread ? unread : "");
     }
 
     // tooltip labels
