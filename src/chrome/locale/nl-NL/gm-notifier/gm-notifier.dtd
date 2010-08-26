@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Versie">
+<!ENTITY notifier-about-author.label "Schrijver">
+<!ENTITY notifier-about-translator.label "Vertaald door">
+<!ENTITY notifier-about-translator.name "Gert-Paul, markh">
+<!ENTITY notifier-about-legal.label "Deze extensie is niet verwant met of ondersteund door Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name; inloggen">
+<!ENTITY notifier-login-username.label "Gebruikersnaam:">
+<!ENTITY notifier-login-username.accesskey "G">
+<!ENTITY notifier-login-password.label "Wachtwoord:">
+<!ENTITY notifier-login-password.accesskey "W">
+<!ENTITY notifier-login-remember-password.label "Wachtwoord onthouden">
+<!ENTITY notifier-login-button-login.label "Inloggen">
+<!ENTITY gm-notifier-context-menu-prefs.label "Voorkeuren">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "V">
+<!ENTITY gm-notifier-context-menu-logout.label "Uitloggen">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "U">
+<!ENTITY gm-notifier-context-menu-checknow.label "Nu controleren">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Statusbalk onderdeel weergeven">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Deïnstalleren">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "D">
+<!ENTITY gm-notifier-context-menu-accounts.label "Accounts">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Beheren">
+<!ENTITY gm-notifier-tooltip-login.label "Klik hier om in te loggen">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Ingelogd als">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; voorkeuren">
+<!ENTITY notifier.prefs.groupbox.ui "Gebruikersinterface">
+<!ENTITY notifier.prefs.statusbar.show.label "Statusbalkonderdeel weergeven">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "S">
+<!ENTITY notifier.prefs.statusbar.position.label "op positie">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "Wanneer ingelogd:">
+<!ENTITY notifier.prefs.load.location "het aanklikken van het pictogram opent Gmail in">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "het huidige tabblad">
+<!ENTITY notifier.prefs.load.location.new_tab "een nieuw tabblad">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "een nieuw tabblad zonder focus">
+<!ENTITY notifier.prefs.load.location.new_window "een nieuw venster">
+<!ENTITY notifier.prefs.load.reset_counter.label "Teller terugzetten wanneer op het pictogram wordt geklikt">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "z">
+<!ENTITY notifier.prefs.load.folderUI.label "De label dropdown weergeven">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "L">
+<!ENTITY notifier.prefs.counter.type.label "Alleen ongelezen berichten in het Postvak IN rapporteren.">
+<!ENTITY notifier.prefs.counter.type.accesskey "P">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Gebruik van meerdere accounts inschakelen">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "M">
+<!ENTITY notifier.prefs.groupbox.notifications "Notificaties">
+<!ENTITY notifier.prefs.notification.enable.label "Systeembericht geven bij nieuw bericht.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "S">
+<!ENTITY notifier.prefs.notification.repeat.label "Blijven tonen totdat het aantal ongelezen berichten wijzigt.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "T">
+<!ENTITY notifier.prefs.soundnotification.play.label "Geluid afspelen (alleen .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "A">
+<!ENTITY notifier.prefs.soundnotification.select "Selecteren">
+<!ENTITY notifier.prefs.soundnotification.preview "Voorbeeld">
+<!ENTITY notifier.prefs.groupbox.connection "Verbinding">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Elke">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minuten op nieuwe berichten controleren">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "E">
+<!ENTITY notifier.prefs.autologin "Automatisch inloggen">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Onbeveiligde verbindingen gebruiken">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "O">
+<!ENTITY notifier.prefs.debugconsole.value "Console">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; accounts">
+<!ENTITY notifier.accounts.listheader.username.label "Gebruikersnaam">
+<!ENTITY notifier.accounts.listheader.online.label "Online">
+<!ENTITY notifier.accounts.listheader.autologin.label "Automatisch inloggen">
+<!ENTITY notifier.accounts.listheader.status.label "Status">
+<!ENTITY notifier.accounts.grid.username.label "Gebruikersnaam:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "Opslaan">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "Wachtwoord:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "W">
+<!ENTITY notifier.accounts.grid.autologin.label "Automatisch inloggen.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Gebruiker bewerken">
+<!ENTITY notifier.accounts.buttons.add.label "Toevoegen">
+<!ENTITY notifier.accounts.buttons.add.accesskey "T">
+<!ENTITY notifier.accounts.buttons.remove.label "Verwijderen">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "w">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; console">
+<!ENTITY notifier.debugconsole.clearButton.label "Wissen">

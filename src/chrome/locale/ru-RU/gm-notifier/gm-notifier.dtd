@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Версия">
+<!ENTITY notifier-about-author.label "Автор">
+<!ENTITY notifier-about-translator.label "Переводчик">
+<!ENTITY notifier-about-translator.name "K!r!lleXXI">
+<!ENTITY notifier-about-legal.label "Данное расширение никак не связано с Google и не получало его одобрения.">
+<!ENTITY notifier-login.title "&gm-notifier.name; логинится">
+<!ENTITY notifier-login-username.label "Логин:">
+<!ENTITY notifier-login-username.accesskey "Л">
+<!ENTITY notifier-login-password.label "Пароль:">
+<!ENTITY notifier-login-password.accesskey "П">
+<!ENTITY notifier-login-remember-password.label "Запомнить пароль.">
+<!ENTITY notifier-login-button-login.label "Вход">
+<!ENTITY gm-notifier-context-menu-prefs.label "Настройки">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "Н">
+<!ENTITY gm-notifier-context-menu-logout.label "Выход">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "В">
+<!ENTITY gm-notifier-context-menu-checknow.label "Проверить сейчас">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "П">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Показывать в cтроке статуса">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "с">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Удалить">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "У">
+<!ENTITY gm-notifier-context-menu-accounts.label "Аккаунты">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Управление">
+<!ENTITY gm-notifier-tooltip-login.label "Щёлкните для входа.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Вы вошли как ">
+<!ENTITY notifier.prefs.name "Настройки &gm-notifier.name;">
+<!ENTITY notifier.prefs.groupbox.ui "Интерфейс пользователя">
+<!ENTITY notifier.prefs.statusbar.show.label "Показывать иконку в строке статуса">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "и">
+<!ENTITY notifier.prefs.statusbar.position.label "в позиции">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "ц">
+<!ENTITY notifier.prefs.logged_in.label "Когда вход удался:">
+<!ENTITY notifier.prefs.load.location "щелчок по значку открывает Gmail в">
+<!ENTITY notifier.prefs.load.location.accesskey "щ">
+<!ENTITY notifier.prefs.load.location.current_tab "текущем табе">
+<!ENTITY notifier.prefs.load.location.new_tab "новом табе">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "новом табе без перехода">
+<!ENTITY notifier.prefs.load.location.new_window "новом окне">
+<!ENTITY notifier.prefs.load.reset_counter.label "сбрасывать счётчик при нажатии на иконку.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "ч">
+<!ENTITY notifier.prefs.load.folderUI.label "показывать у иконки значок выпадающего меню.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "м">
+<!ENTITY notifier.prefs.counter.type.label "сообщать только о непрочитанных письмах в папке «Входящие».">
+<!ENTITY notifier.prefs.counter.type.accesskey "В">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Получaть информaцию с нескольких аккаунтов">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "а">
+<!ENTITY notifier.prefs.groupbox.notifications "Уведомления">
+<!ENTITY notifier.prefs.notification.enable.label "Выводить уведомления о получении новых писем.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "у">
+<!ENTITY notifier.prefs.notification.repeat.label "Показывать уведомления, пока не изменится число непрочитанных.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "П">
+<!ENTITY notifier.prefs.soundnotification.play.label "Проиграть звук (только .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "З">
+<!ENTITY notifier.prefs.soundnotification.select "Выбрать">
+<!ENTITY notifier.prefs.soundnotification.preview "Прослушать">
+<!ENTITY notifier.prefs.groupbox.connection "Соединение">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Смотреть в ящике новые письма каждые">
+<!ENTITY notifier.prefs.newmail.check.label-2 "минут.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "я">
+<!ENTITY notifier.prefs.autologin "Автологин.">
+<!ENTITY notifier.prefs.autologin.accesskey "Л">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Иcпользовать незащищённые соединения.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "с">
+<!ENTITY notifier.prefs.debugconsole.value "Консоль">
+<!ENTITY notifier.accounts.window.title "Аккаунты &gm-notifier.name;">
+<!ENTITY notifier.accounts.listheader.username.label "Логин">
+<!ENTITY notifier.accounts.listheader.online.label "Онлайн">
+<!ENTITY notifier.accounts.listheader.autologin.label "Автологин">
+<!ENTITY notifier.accounts.listheader.status.label "Статус">
+<!ENTITY notifier.accounts.grid.username.label "Логин:">
+<!ENTITY notifier.accounts.grid.username.accesskey "Л">
+<!ENTITY notifier.accounts.grid.username.save.label "Сохранить">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "С">
+<!ENTITY notifier.accounts.grid.username.password.label "Пароль:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "П">
+<!ENTITY notifier.accounts.grid.autologin.label "Входить автоматически.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "а">
+<!ENTITY notifier.accounts.groupbox.label "Редактировать">
+<!ENTITY notifier.accounts.buttons.add.label "Добавить">
+<!ENTITY notifier.accounts.buttons.add.accesskey "Д">
+<!ENTITY notifier.accounts.buttons.remove.label "Удалить">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "У">
+<!ENTITY notifier.debugconsole.title "Консоль &gm-notifier.name;">
+<!ENTITY notifier.debugconsole.clearButton.label "Очистить">

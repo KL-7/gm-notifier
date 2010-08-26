@@ -1,0 +1,500 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&notifier.accounts.window.title;"
+        windowtype="gm-notifier:accounts"
+        buttons="accept"
+        style="padding:0px; margin:0px;"
+        ondialogaccept="onUnload()" ondialogcancel="onUnload()"
+        onunload="onUnload()" onload="start()">
+
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-prefs.js"/>
+  <script>
+    <![CDATA[
+      const kPSWDMANAGER_CONTRACTID = "@mozilla.org/passwordmanager;1";
+      const nsIPasswordManager = Components.interfaces.nsIPasswordManager;
+      const nsIPasswordManagerInternal = Components.interfaces.nsIPasswordManagerInternal;
+      const nsIGMNotifierProgressListener = Components.interfaces.nsIGMNotifierProgressListener;
+
+      var gPrefs;
+      var gHost = "chrome://gm-notifier/";
+      var gCurrentUser;
+
+      var gNotifierService = null;
+      var gNotifierProgressListener = null;
+ 
+      // 1: Edit, 2: New
+      var gMode;
+
+      function start() {
+        gNotifierService = Components.classes["@mozilla.org/GMailNotifier;1"].getService(Components.interfaces.nsIGMNotifierService);
+
+        // register listener
+        gNotifierProgressListener = new NotifierProgressListener();
+        gNotifierService.addListener(gNotifierProgressListener);
+
+        gPrefs = new gm_prefs();
+
+        toogleEditFields(false);
+        prefillAccounts();
+      }
+
+      var NotifierProgressListener = function() {
+        return ({
+          getID : function () { return null; },
+
+          onStateChange : function (aUsername, aState) {
+            var elm = document.getElementById("userstatus-"+aUsername);
+            if (!elm)
+              return;
+
+            var string = "";
+
+            if (aState == nsIGMNotifierProgressListener.LOGIN_INITIATED) {
+              string = getStringFromBundle("UserStateConnecting");
+            } else if (aState == nsIGMNotifierProgressListener.LOGIN_FAILED || aState == nsIGMNotifierProgressListener.LOGIN_DETAILS_INVALID || aState == nsIGMNotifierProgressListener.LOGIN_SUCCESS || aState == nsIGMNotifierProgressListener.LOGOUT_USER) {
+              var state = gNotifierService.getUserState(aUsername);
+              string = getStringForState(state);
+
+              if (aState == nsIGMNotifierProgressListener.LOGIN_SUCCESS)
+                document.getElementById("loggedin-"+aUsername).checked = true;
+              else
+                document.getElementById("loggedin-"+aUsername).checked = false;
+            }
+
+            if (string)
+              elm.setAttribute("value", string);
+          },
+
+          QueryInterface : function(aIID) {
+            if (aIID.equals(nsIGMNotifierProgressListener) ||
+                aIID.equals(Components.interfaces.nsISupports))
+              return this;
+            throw Components.results.NS_NOINTERFACE;
+          }
+        });
+      }
+
+      function toogleEditFields(aEnabled) {
+        document.getElementById("username").disabled = !aEnabled;
+        document.getElementById("password").disabled = !aEnabled;
+        document.getElementById("autologin").disabled = !aEnabled;
+        document.getElementById("label1").disabled = !aEnabled;
+        document.getElementById("label2").disabled = !aEnabled;
+        document.getElementById("save-button").disabled = true;
+      }
+
+      function setupEditFields(aItem) {
+        var username = "", password = "", autologin = false;
+        if (aItem) {
+          username = aItem.firstChild.getAttribute("label");
+          password = gPasswordArray[username];
+          autologin = aItem.childNodes[2].firstChild.checked;
+        }
+
+        gCurrentUser = username;
+
+        document.getElementById("username").value = username;
+        document.getElementById("password").value = password;
+        document.getElementById("autologin").checked = autologin;
+
+        gMode = 1;
+      }
+
+      function selectionChanged(aListbox) {
+        var selectedItem = aListbox.selectedItem;
+        toogleEditFields(selectedItem ? true : false);
+        setupEditFields(selectedItem);
+
+        document.getElementById("removeButton").setAttribute("disabled", !selectedItem);
+      }
+
+      var gPasswordArray = new Array();
+
+      function getPassword(aUsername) {
+        if (Components.classes["@mozilla.org/login-manager;1"]) {
+          var passwordManager = Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+          var logins = passwordManager.findLogins({}, gHost, null, "gm-notifier");
+
+          for (var i = 0; i < logins.length; i++) {
+            if (logins[i].username == aUsername) {
+              var password = logins[i].password;
+              // XXX: why not call the service here to get password?
+              if (password === " ") {
+                // XXX: empty password is " " for now due to ff3 change
+                return "";
+              } else {
+                return password;
+              }
+            }
+          }
+        } else {
+          var passwordManager = Components.classes["@mozilla.org/passwordmanager;1"].createInstance(Components.interfaces.nsIPasswordManagerInternal);
+          var host = {value:""};
+          var user =  {value:""};
+          var password = {value:""}; 
+
+          try {
+            passwordManager.findPasswordEntry(gHost, aUsername, "", host, user, password);
+          } catch(e){ }
+
+          return password.value;
+        }
+      }
+
+      function prefillAccounts() {
+        var user, password, state;
+        var userlist = document.getElementById("userlist");
+
+        var count = gNotifierService.getUserCount();
+
+        for (var i = 0; i < count; i++) {
+          user = gNotifierService.getUserName(i);
+          password = getPassword(user);
+          state = gNotifierService.getUserState(user);
+
+          gPasswordArray[user] = password;
+
+          // check user prefs
+          var autologin = gPrefs.getBoolPref("gm-notifier.userlist." + user + ".autologin");
+          var loggedin = (state == gNotifierService.USER_STATE_LOGGED_IN);
+
+          userlist.appendChild(createListItem(user, autologin, loggedin, state));
+        }
+      }
+
+      function createListItem(aUsername, aAutoLogin, aIsLoggedIn, aState) {
+        var listitem = document.createElement("listitem");
+        listitem.setAttribute("allowevents", "true");
+
+        var listcell = document.createElement("listcell");
+        listcell.setAttribute("label", aUsername);
+        listitem.appendChild(listcell);
+
+        listcell = document.createElement("listcell");
+        listcell.setAttribute("pack", "center");
+        var checkbox = document.createElement("checkbox");
+        checkbox.setAttribute("id", "loggedin-"+aUsername);
+        checkbox.setAttribute("oncommand", "loggedinChanged(this, \""+aUsername+"\")");
+        checkbox.setAttribute("checked", (aIsLoggedIn == null ? false : aIsLoggedIn));
+        listcell.appendChild(checkbox);
+        listitem.appendChild(listcell);
+
+        listcell = document.createElement("listcell");
+        listcell.setAttribute("pack", "center");
+        checkbox = document.createElement("checkbox");
+        checkbox.setAttribute("oncommand", "autologinChanged(this, \""+aUsername+"\")");
+        checkbox.setAttribute("checked", (aAutoLogin == null ? false : aAutoLogin));
+        listcell.appendChild(checkbox);
+        listitem.appendChild(listcell);
+
+        listcell = document.createElement("listcell");
+        var label = document.createElement("label");
+        label.setAttribute("value", getStringForState(aState));
+        label.setAttribute("id", "userstatus-"+aUsername);
+        listcell.appendChild(label);
+        listitem.appendChild(listcell);
+
+        return listitem;
+      }
+
+      function getStringFromBundle(aName) {
+        var strbundle = document.getElementById("stringbundle");
+        return strbundle.getString(aName);
+      }
+
+      function getStringForState(aState) {
+        var value = "";
+
+        if (aState == gNotifierService.USER_STATE_LOGGED_IN) {
+          value = getStringFromBundle("LoggingStatusLoggedIn");
+        } else if (aState == gNotifierService.USER_STATE_LOGGED_OUT) {
+          value = getStringFromBundle("UserStateLoggedOut");
+        } else if (aState == gNotifierService.USER_STATE_INVALID_DETAILS) {
+          value = getStringFromBundle("UserStateInvalidDetails");
+        }
+
+        return value;
+      }
+
+      function deleteAccount() {
+        var userlist = document.getElementById("userlist");
+        if (!userlist.selectedItem)
+          return;
+
+        var username = userlist.selectedItem.firstChild.getAttribute("label");
+        var shouldDelete = confirm("Are you sure you want to delete the account \"" + username + "\"?");
+
+        if (shouldDelete) {
+          deleteUsername(username);
+
+          userlist.removeItemAt(userlist.selectedIndex)
+          gPasswordArray[username] = null;
+          deleteUsername(username);
+          gPrefs.clearPref("gm-notifier.userlist." + username + ".autologin");
+          gPrefs.clearPref("gm-notifier.userlist." + username + ".loggedin");
+        }
+      }
+
+      function deleteUsername(aUsername) {
+        try {
+          if (Components.classes["@mozilla.org/login-manager;1"]) {
+            var passwordManager = Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+            var passwords = passwordManager.findLogins({}, gHost, null, "gm-notifier");
+
+            for (var i = 0; i < passwords.length; i++) {
+              if (passwords[i].username == aUsername) {
+                passwordManager.removeLogin(passwords[i]);
+                break;
+              }
+            }
+
+          } else {
+            var passwordManager = Components.classes[kPSWDMANAGER_CONTRACTID]
+                               .createInstance(nsIPasswordManager);
+            passwordManager.removeUser(gHost, aUsername);
+          }
+        } catch (e) {}
+
+        gNotifierService.removeUser(aUsername);
+      }
+
+      function addUsername(aUsername, aPassword) {
+        try {
+          if (Components.classes["@mozilla.org/login-manager;1"]) {
+            var logininfo = Components.classes["@mozilla.org/login-manager/loginInfo;1"].createInstance(Components.interfaces.nsILoginInfo);
+            var passwordManager = Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+
+            logininfo.init(gHost, null, "gm-notifier", aUsername, aPassword, "", "");
+            passwordManager.addLogin(logininfo);
+          } else {
+            var passwordManager = Components.classes[kPSWDMANAGER_CONTRACTID]
+                               .createInstance(nsIPasswordManager);
+            passwordManager.addUser(gHost, aUsername, aPassword);
+          }
+        } catch (e) {}
+      }
+
+      function updatePassword(aUsername, aPassword) {
+        try {
+          if (Components.classes["@mozilla.org/login-manager;1"]) {
+            var loginManager = Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+            var passwords = loginManager.findLogins({}, gHost, null, "gm-notifier");
+
+            for (var i = 0; i < passwords.length; i++) {
+              if (passwords[i].username == aUsername) {
+                var logininfo = Components.classes["@mozilla.org/login-manager/loginInfo;1"].createInstance(Components.interfaces.nsILoginInfo);
+                logininfo.init(gHost, null, "gm-notifier", aUsername, aPassword, "", "");
+                loginManager.modifyLogin(passwords[i], logininfo);
+                break;
+              }
+            }
+          } else {
+            var passwordManager = Components.classes[kPSWDMANAGER_CONTRACTID]
+                               .createInstance(nsIPasswordManager);
+            try {
+              passwordManager.removeUser(gHost, aUsername);
+            } catch (e) {}
+
+            passwordManager.addUser(gHost, aUsername, aPassword);
+          }
+        } catch (e) {}
+      }
+
+      function addUser() {
+        toogleEditFields(true);
+        setupEditFields();
+
+        // disable save button untill all data is there
+        document.getElementById("save-button").disabled = true;
+
+        // focus the username field
+        document.getElementById("username").focus();
+        gMode = 2;
+      }
+
+      function updateSaveButton() {
+        // check if username/password ain't empty
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username.length > 0 && password.length > 0)
+          document.getElementById("save-button").disabled = false;
+        else
+          document.getElementById("save-button").disabled = true;
+      }
+
+      function doSaveUser() {
+        var userlist = document.getElementById("userlist");
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var autologin = document.getElementById("autologin").checked;
+
+        // 1: Edit, 2: New
+        if (gMode == 1) {
+          // check if the username changed
+          if (username != gCurrentUser) {
+            // check if the username already exists
+            if (gPasswordArray[username]) {
+              alert("User \"" + username + "\" already exists!")
+              return;
+            }
+
+            // delete old user
+            deleteUsername(gCurrentUser);
+            gPasswordArray[gCurrentUser] = null;
+
+            gPrefs.clearPref("gm-notifier.userlist." + gCurrentUser + ".autologin");
+            gPrefs.clearPref("gm-notifier.userlist." + gCurrentUser + ".loggedin");
+          }
+
+          // update user
+          updatePassword(username, password);
+          gPasswordArray[username] = password;
+
+          gPrefs.setBoolPref("gm-notifier.userlist." + username + ".autologin", autologin);
+          gPrefs.setBoolPref("gm-notifier.userlist." + username + ".loggedin", false);
+
+          userlist.selectedItem.firstChild.setAttribute("label", username);
+          userlist.selectedItem.childNodes[2].firstChild.setAttribute("checked", autologin);
+
+          // XXX: what if user is logged in?
+        } else if (gMode == 2) {
+          // check if username exists
+          if (gPasswordArray[username]) {
+            alert("User \"" + username + "\" already exists!")
+            return;
+          }
+
+          // add user to the password manager
+          addUsername(username, password);
+          gPasswordArray[username] = password;
+
+          // set per-account preference
+          gPrefs.setBoolPref("gm-notifier.userlist." + username + ".autologin", autologin);
+          gPrefs.setBoolPref("gm-notifier.userlist." + username + ".loggedin", false);
+
+          userlist.appendChild(createListItem(username, autologin, false, gNotifierService.USER_STATE_LOGGED_OUT));
+          userlist.selectedIndex = userlist.getRowCount() - 1;
+
+          gNotifierService.addUser(username);
+        }
+
+        // saved, so disable button
+        document.getElementById("save-button").disabled = true;
+      }
+
+      function autologinChanged(aCheckbox, aUsername) {
+        // force selection
+        document.getElementById("userlist").selectedItem = aCheckbox.parentNode.parentNode;
+        document.getElementById("autologin").checked = aCheckbox.checked;
+
+        // save
+        doSaveUser();
+      }
+
+      function loggedinChanged(aCheckbox, aUsername) {
+        if (aCheckbox.checked) {
+          // since the accounts window can be opened from the prefs window by
+          // the user by checking the multi-account checkbox (which won't change
+          // the underlying pref untill you press ok on that page), we make sure
+          // that the multi-account pref is true when we log in a user.
+          if (!gPrefs.getBoolPref("gm-notifier.multiaccount.enabled")) {
+            gPrefs.setBoolPref("gm-notifier.multiaccount.enabled", true);
+          }
+
+          gNotifierService.loginUser(aUsername);
+        } else {
+          gNotifierService.logoutUser(aUsername);
+        }
+      }
+
+      function onDestroy() {
+        onUnload();
+        window.close();
+      }
+
+      function onUnload() {
+        // unregister listener
+        if (gNotifierProgressListener)
+          gNotifierService.removeListener(gNotifierProgressListener);
+
+        // cleanup
+        gNotifierProgressListener = null;
+        gNotifierService = null;
+        gPrefs = null;
+      }
+    ]]>
+  </script>
+
+  <stringbundle id="stringbundle" src="chrome://gm-notifier/locale/gm-notifier.properties"/>
+
+  <description value="&notifier.accounts.window.title;" class="notifier-dialog-title"
+               style="min-width:400px; margin-bottom: 10px;"/>
+
+  <hbox flex="1">
+    <vbox flex="1">
+      <listbox id="userlist" flex="1" onselect="selectionChanged(this)">
+        <listhead>
+          <listheader label="&notifier.accounts.listheader.username.label;"/>
+          <listheader label="&notifier.accounts.listheader.online.label;"/>
+          <listheader label="&notifier.accounts.listheader.autologin.label;"/>
+          <listheader label="&notifier.accounts.listheader.status.label;"/>
+        </listhead>
+        <listcols>
+          <listcol flex="10"/>
+          <listcol flex="1"/>
+          <listcol flex="1"/>
+          <listcol flex="1"/>
+        </listcols>
+      </listbox>
+
+      <groupbox>
+        <caption label="&notifier.accounts.groupbox.label;"/>
+        <grid flex="1">
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <label id="label1"
+                     value="&notifier.accounts.grid.username.label;"
+                     accesskey="&notifier.accounts.grid.username.accesskey;"
+                     control="username"/>
+              <textbox onkeyup="updateSaveButton()" id="username" tabindex="1"/>
+
+              <button id="save-button" icon="save"
+                      label="&notifier.accounts.grid.username.save.label;"
+                      accesskey="&notifier.accounts.grid.username.save.accesskey;"
+                      oncommand="doSaveUser()" tabindex="4"/>
+            </row>
+            <row align="center">
+              <label id="label2"
+                     value="&notifier.accounts.grid.username.password.label;"
+                     accesskey="&notifier.accounts.grid.username.password.accesskey;"
+                     control="password"/>
+              <textbox id="password" onkeyup="updateSaveButton()" type="password" tabindex="2"/>
+            </row>
+            <checkbox id="autologin" 
+                      label="&notifier.accounts.grid.autologin.label;"
+                      accesskey="&notifier.accounts.grid.autologin.accesskey;"
+                      tabindex="3"/>
+          </rows>
+        </grid>
+      </groupbox>
+    </vbox>
+    <vbox>
+      <button label="&notifier.accounts.buttons.add.label;"
+              accesskey="&notifier.accounts.buttons.add.accesskey;"
+              icon="add" oncommand="addUser()"/>
+      <button label="&notifier.accounts.buttons.remove.label;"
+              id="removeButton" disabled="true"
+              accesskey="&notifier.accounts.buttons.remove.accesskey;"
+              icon="remove" oncommand="deleteAccount()"/>
+    </vbox>
+  </hbox>
+</dialog>

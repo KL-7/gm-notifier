@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+<?xul-overlay href="chrome://gm-notifier/content/gm-core-overlay.xul"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<overlay id="gm-sm-overlay" 
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <popupset id="bookmarksPopupset">
+    <popup id="gm-context-menu">
+      <menuitem collapsed="true" id="gm-context-menu-statusbar-item"/>
+    </popup>
+  </popupset>
+</overlay>
+

@@ -1,0 +1,141 @@
+/* tooltip's description doesn't need padding */
+#gm-notifier-tooltip-logged-out > description {
+  margin: 0px;
+}
+
+/* Toolbar stuff */
+
+#gm-notifier-toolbar-item .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo.png");
+}
+
+#gm-notifier-toolbar-item[new-mail="true"] .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-new.png");
+}
+
+#gm-notifier-toolbar-item[logged-in="false"] .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-disabled.png");
+}
+
+toolbar[iconsize="small"] #gm-notifier-toolbar-item .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm.png");
+}
+
+toolbar[iconsize="small"] #gm-notifier-toolbar-item[new-mail="true"] .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm-new.png");
+}
+
+toolbar[iconsize="small"] #gm-notifier-toolbar-item[logged-in="false"] .toolbarbutton-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm-disabled.png");
+}
+
+#gm-notifier-toolbar-item[showFolders="false"] > .toolbarbutton-menubutton-dropmarker {
+  display:none;
+}
+
+#gm-notifier-toolbar-item[logged-in="false"] {
+  -moz-binding: url('chrome://gm-notifier/content/gm-notifier.xml#toolbarbutton-logged-out');
+  -moz-box-orient: vertical !important
+}
+
+#gm-notifier-toolbar-item[logged-in="true"] {
+  -moz-binding: url('chrome://gm-notifier/content/gm-notifier.xml#menu-button');
+}
+
+#gm-notifier-toolbar-item[logged-in="true"] .toolbarbutton-menubutton-button {
+  -moz-binding: url('chrome://gm-notifier/content/gm-notifier.xml#toolbarbutton-base');
+}
+
+/* text only*/
+toolbar[mode="text"] #gm-notifier-toolbar-hbox {
+  display: none;
+}
+
+/* our small icon is 11px tall, others are 16px */
+toolbar[mode="full"][iconsize="small"] #gm-notifier-toolbar-item .toolbarbutton-icon {
+  padding-top: 2px !important;
+  padding-bottom: 3px !important;
+}
+
+toolbar[mode="full"][iconsize="large"] #gm-notifier-toolbar-item .toolbarbutton-icon {
+  padding-top: 2px !important;
+}
+/* text only, need some padding */
+toolbar[mode="text"] #gm-notifier-toolbar-item .toolbarbutton-text {
+  padding-top: 2px !important;
+}
+
+/* Palette - hide label */
+#palette-box #gm-notifier-toolbar-item .toolbarbutton-text {
+  display: none;
+}
+
+/* statusbar stuff */
+#gm-notifier-statusbar {
+  -moz-binding: url('chrome://gm-notifier/content/gm-notifier.xml#statusbarpanel-iconic-text');
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm.png");
+}
+
+#gm-notifier-statusbar[new-mail="true"] .statusbarpanel-icon {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm-new.png");
+}
+
+#gm-notifier-statusbar[logged-in="false"] {
+  list-style-image: url("chrome://gm-notifier/content/gm-logo-sm-disabled.png");
+}
+
+#gm-notifier-statusbar[logged-in="true"] > .statusbarpanel-text {
+  margin: 0 0 0 4px;
+}
+
+#gm-notifier-statusbar[logged-in="false"] > .statusbarpanel-text {
+  margin: 0px !important;
+}
+
+/* About dialog */
+#notifier-about-dialog {
+  padding: 0px;
+}
+#notifier-about {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#notifier-about-about-separator {
+  margin-top: 0;
+}
+
+.notifier-about-name {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.notifier-about-title {
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.notifier-about-version {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.notifier-dialog-title {
+  background-color:white; 
+  padding:5px;
+  margin:0px;
+  font-size:small;
+  font-weight:bold;
+  font-family:sans-serif;
+  border-bottom-width: 2px;
+  border-bottom-style: groove;
+  border-bottom-color: threedface;
+}
+
+.multilogin-users {
+  padding: 10px;
+}
+
+.multilogin-row {
+}

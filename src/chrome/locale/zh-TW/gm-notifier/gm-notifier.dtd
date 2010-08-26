@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "版本">
+<!ENTITY notifier-about-author.label "作者">
+<!ENTITY notifier-about-translator.label "在地化">
+<!ENTITY notifier-about-translator.name "Jose Sun">
+<!ENTITY notifier-about-legal.label "此套件和 Google 並無任何關聯或受其背書。">
+<!ENTITY notifier-login.title "&gm-notifier.name; 登入">
+<!ENTITY notifier-login-username.label "使用者名稱:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "密碼:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "記住密碼">
+<!ENTITY notifier-login-button-login.label "登入">
+<!ENTITY gm-notifier-context-menu-prefs.label "偏好設定">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "登出">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "立刻檢查">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "顯示狀態列圖示">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "解除安裝">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "帳號">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "管理">
+<!ENTITY gm-notifier-tooltip-login.label "按一下登入">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "已登入為">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; 偏好設定">
+<!ENTITY notifier.prefs.groupbox.ui "介面設定">
+<!ENTITY notifier.prefs.statusbar.show.label "顯示狀態列圖示">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "顯示位置">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "登入後:">
+<!ENTITY notifier.prefs.load.location "按下圖示會開啟 Gmail 於">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "目前分頁">
+<!ENTITY notifier.prefs.load.location.new_tab "新分頁">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "新未使用分頁">
+<!ENTITY notifier.prefs.load.location.new_window "新視窗">
+<!ENTITY notifier.prefs.load.reset_counter.label "當按下通知圖示時重設計數器">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "顯示標籤於下拉式選單中">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "I">
+<!ENTITY notifier.prefs.counter.type.label "只顯示收件匣中的未讀郵件總數">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+<!ENTITY notifier.prefs.ui.multiaccount.label "啟用多帳號管理">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "通知設定">
+<!ENTITY notifier.prefs.notification.enable.label "有新郵件時顯示系統通知視窗">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "持續顯示直到未讀郵件數改變">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "播放音效 (.wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "選擇">
+<!ENTITY notifier.prefs.soundnotification.preview "預覽">
+<!ENTITY notifier.prefs.groupbox.connection "連線設定">
+<!ENTITY notifier.prefs.newmail.check.label-1 "檢查新郵件每">
+<!ENTITY notifier.prefs.newmail.check.label-2 "分鐘">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "自動登入">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "使用未加密連線">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "主控台">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; 帳號">
+<!ENTITY notifier.accounts.listheader.username.label "使用者名稱">
+<!ENTITY notifier.accounts.listheader.online.label "連線">
+<!ENTITY notifier.accounts.listheader.autologin.label "自動登入">
+<!ENTITY notifier.accounts.listheader.status.label "狀態">
+<!ENTITY notifier.accounts.grid.username.label "使用者名稱:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "儲存">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "密碼:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "自動登入">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "編輯使用者">
+<!ENTITY notifier.accounts.buttons.add.label "新增">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "移除">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; 主控台">
+<!ENTITY notifier.debugconsole.clearButton.label "清除">

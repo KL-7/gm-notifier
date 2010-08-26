@@ -1,0 +1,24 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(67d3a9ce-c2f5-48bb-a9f7-c37a61264ecd)]
+interface nsIGMNotifierProgressListener : nsISupports
+{
+  const short LOGIN_INITIATED          = 0;
+  const short LOGIN_FAILED             = 1;
+  const short LOGIN_SUCCESS            = 2;
+  const short NO_NEW_MAIL              = 3;
+  const short NEW_MAIL                 = 4;
+  const short LOGOUT                   = 5;
+  const short LOAD_MAIL                = 6;
+  const short LOGIN_DETAILS_INVALID    = 7;
+  const short ACCOUNTS_CHECK_INITIATED = 8;
+  const short ACCOUNTS_CHECK_COMPLETED = 9;
+  const short LOGOUT_USER              = 10;
+  const short NOTIFIER_LOGGED_IN       = 11;
+  const short USER_MODE_CHANGED        = 12;
+
+  void onStateChange(in string aUsername, in long aState);
+
+  long getID();
+};
+

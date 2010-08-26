@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier-dialogs.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&notifier.debugconsole.title;"
+        buttons="accept"
+        style="min-height: 200px; min-width: 450px;"
+        onload="loadLog()">
+
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-prefs.js"/>
+  <script>
+    <![CDATA[
+      function loadLog() {
+        document.getElementById("logwindow").contentWindow.document.body.style.fontSize = "0.8em";
+        document.getElementById("logwindow").contentWindow.document.body.style.width = "98%";
+
+               var service = Components.classes["@mozilla.org/GMailNotifier;1"]
+                                .getService(Components.interfaces.nsIGMNotifierService);
+
+        var str = service.getLog();
+        var list = str.split("|||");
+
+        var logiframe = document.getElementById("logwindow").contentWindow.document.body;
+
+        for (var run = 0; run < list.length-1; run++) {
+          var div = document.createElement("div");
+          div.style.border = "1px solid black";
+          div.style.padding = "5px";
+          div.style.marginBottom = "5px";
+          div.style.display = "block";
+
+          if ((list[run][0] == " ") && (list[run][1] == " ")) {
+            div.style.marginLeft = "20px"
+          }
+
+          div.textContent = list[run];
+          logiframe.appendChild(div);
+        }
+
+        //var button = document.documentElement.getButton("extra2");
+        //button.addEventListener("command", clearConsole, false);
+        //button.setAttribute("icon", "clear");
+      }
+
+      function clearConsole() {
+        var service = Components.classes["@mozilla.org/GMailNotifier;1"].getService().wrappedJSObject;
+
+        service.clearLog();
+
+        document.getElementById("logwindow").contentWindow.document.body.innerHTML = "";
+      }
+
+      function createObserver() {
+        return ({
+          data : "",
+
+          onStartRequest : function (aRequest, aContext) {
+            this.data = "";
+          },
+
+          onDataAvailable : function (aRequest, aContext, aStream, aSourceOffset, aLength){
+            var scriptableInputStream = 
+              Components.classes["@mozilla.org/scriptableinputstream;1"]
+                        .createInstance(Components.interfaces.nsIScriptableInputStream);
+            scriptableInputStream.init(aStream);
+
+            this.data += scriptableInputStream.read(aLength);
+          },
+
+          onStopRequest : function (aRequest, aContext, aStatus) {
+            // XXX: proxy issue: aStatus is an error from http://lxr.mozilla.org/seamonkey/source/netwerk/base/public/nsNetError.h#172
+            finishSubmit(this.data);
+          },
+
+          // nsIInterfaceRequestor
+          getInterface: function (aIID) {
+            try {
+              return this.QueryInterface(aIID);
+            } catch (e) {
+              throw Components.results.NS_NOINTERFACE;
+            }
+          },
+
+          // nsIProgressEventSink (to shut up annoying debug exceptions
+          onProgress : function (aRequest, aContext, aProgress, aProgressMax) { },
+          onStatus : function (aRequest, aContext, aStatus, aStatusArg) { },
+
+          // nsIHttpEventSink (to shut up annoying debug exceptions
+          onRedirect : function (aOldChannel, aNewChannel) { },
+
+          QueryInterface : function(aIID) {
+            if (aIID.equals(nsISupports) ||
+                aIID.equals(Components.interfaces.nsIDocShell) ||
+                aIID.equals(Components.interfaces.nsIInterfaceRequestor) ||
+                aIID.equals(Components.interfaces.nsIChannelEventSink) || 
+                aIID.equals(Components.interfaces.nsISupportsWeakReference) ||
+                aIID.equals(Components.interfaces.nsIProgressEventSink) ||
+                aIID.equals(Components.interfaces.nsIPrompt) ||
+                aIID.equals(Components.interfaces.nsIHttpEventSink) ||
+                aIID.equals(Components.interfaces.nsIDocShellTreeItem) ||
+                aIID.equals(Components.interfaces.nsIStreamListener))
+              return this;
+
+            throw Components.results.NS_NOINTERFACE;
+          }
+        }
+        );
+      }
+
+      function finishSubmit(aData) {
+        document.getElementById("submitButton").disabled = false;
+        document.getElementById("handleTextBox").value = aData;
+      }
+
+      function sendLog() {
+        //Components.utils.import("resource://gre/modules/JSON.jsm");
+
+        var service = Components.classes["@mozilla.org/GMailNotifier;1"].getService();
+
+        var ioService = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
+
+        // create an nsIURI
+        var uri = ioService.newURI("http://nexgenmedia.net/extensions/gmnLogPost.php", null, null);
+
+        //nsIInputStream
+        var uploadStream = Components.classes["@mozilla.org/io/string-input-stream;1"].createInstance(Components.interfaces.nsIStringInputStream);
+
+        var log = service.getLog();
+        var data = {"log": log, "description": document.getElementById("descriptionTextBox").value};
+        var postdata = "postdata="+encodeURIComponent(JSON.stringify(data));
+        uploadStream.setData(postdata, postdata.length);
+
+        // get a channel for that nsIURI
+        var channel = ioService.newChannelFromURI(uri);
+
+        // get a httpchannel and make it a post
+        var httpChannel = channel.QueryInterface(Components.interfaces.nsIHttpChannel);
+
+        var uploadChannel = channel.QueryInterface(Components.interfaces.nsIUploadChannel);
+        uploadChannel.setUploadStream(uploadStream, "application/x-www-form-urlencoded", -1);
+
+        // order important - setUploadStream resets to get/put
+        httpChannel.requestMethod = "POST";
+
+        var observer = createObserver();
+
+        channel.notificationCallbacks = observer;
+
+        // disable button
+        document.getElementById("submitButton").disabled = true;
+        channel.asyncOpen(observer, null);
+      }
+    ]]>
+  </script>
+
+  <iframe id="logwindow" flex="0" src="" style="display:none"/>
+  <vbox>
+    <description>&notifier.debugconsole.submitDescription;</description>
+    <description>&notifier.debugconsole.privacyDescription;</description>
+
+    <vbox style="margin-top: 20px;">
+      <label for="descriptionTextBox" value="&notifier.debugconsole.handleDescriptionLabel;"/>
+      <textbox multiline="true" id="descriptionTextBox" value=""/>
+    </vbox>
+    <hbox align="center">
+      <button id="submitButton" label="&notifier.debugconsole.submitButton.label;" accesskey="&notifier.debugconsole.submitButton.accesskey;" oncommand="sendLog()"/>
+      <hbox flex="0" align="center">
+        <spacer flex="1"/>
+        <label value="&notifier.debugconsole.handleLabel;"/>
+        <textbox id="handleTextBox" value=""/>
+      </hbox>
+    </hbox>
+  </vbox>
+</dialog>

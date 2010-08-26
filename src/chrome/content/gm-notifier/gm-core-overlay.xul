@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<overlay id="gm-core-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-prefs.js"/>
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-notifier.js"/>
+
+  <popup id="gm-context-menu" onpopupshowing="gGMailNotifier.initPopup();">
+    <menuitem label="&gm-notifier-context-menu-showstatusbar.label;"
+              accesskey="&gm-notifier-context-menu-showstatusbar.accesskey;"
+              oncommand="gGMailNotifier.showStatusbarItem(this.hasAttribute('checked'))"
+              type="checkbox" id="gm-context-menu-statusbar-item"/>
+    <menuitem label="&gm-notifier-context-menu-checknow.label;"
+              accesskey="&gm-notifier-context-menu-checknow.accesskey;"
+              oncommand="gGMailNotifier.checkNow()" id="gm-context-menu-check-now"/>
+    <menuitem label="&gm-notifier-context-menu-logout.label;" disabled="true"
+              accesskey="&gm-notifier-context-menu-logout.accesskey;"
+              oncommand="gGMailNotifier.logout()" id="gm-context-menu-logout"/>
+    <menuseparator id="gm-context-menu-logout-seperator"/>
+    <menuitem id="gm-notifier-context-menu-accounts" label="Accounts"
+              accesskey="A"
+              oncommand="gGMailNotifier.loadAccountsWindow()"
+              collapsed="true"/>
+    <menu id="gm-notifier-context-menu-accounts-manage" label="&gm-notifier-context-menu-accounts.label;" collapsed="true">
+      <menupopup oncommand="gGMailNotifier.accountSwap(event);">
+        <menuitem label="&gm-notifier-context-menu-accounts-manage.label;" oncommand="gGMailNotifier.loadAccountsWindow()"/>
+        <menuseparator id="gm-notifier-context-menu-accounts-separator"/>
+      </menupopup>
+    </menu>
+    <menuitem id="gm-notifier-context-menu-prefs" label="&gm-notifier-context-menu-prefs.label;"
+              accesskey="&gm-notifier-context-menu-prefs.accesskey;"
+              oncommand="gGMailNotifier.loadPrefWindow()"/>
+  </popup>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="gm-notifier-stringbundle" src="chrome://gm-notifier/locale/gm-notifier.properties"/>
+  </stringbundleset>
+
+  <toolbox id="navigator-toolbox"> 
+    <tooltip id="gm-notifier-tooltip"></tooltip>
+  </toolbox>
+
+  <tooltip orient="vertical" id="gm-notifier-tooltip" onpopupshowing="gGMailNotifier.fillInTooltip(this)">
+    <hbox id="gm-notifier-tooltip-logged-out">
+      <description value="&gm-notifier-tooltip-login.label;"/>
+    </hbox>
+    <vbox id="gm-notifier-tooltip-logged-in" collapsed="true">
+      <hbox align="center">
+        <description style="margin-right:0px" value="&gm-notifier-tooltip-logged-in-as.label;"/>
+        <description style="margin-right:0px; margin-left:0px; font-weight:bold;" 
+                   id="gm-notifier-tooltip-username" value=""/>
+        <description style="margin-left:0px" value="."/>
+      </hbox>
+
+      <description id="gm-notifier-tooltip-unread" value=""/>
+
+      <grid id="gm-notifier-tooltip-labels" hidden="true" style="font-size:0.8em; padding:5px;">
+        <columns>
+          <column/>
+          <column/>
+        </columns>
+        <rows id="gm-tooltip-row">
+        </rows>
+      </grid>
+
+      <description id="gm-notifier-tooltip-quota" style="font-size:0.8em" value=""/>
+    </vbox>
+  </tooltip>
+
+  <statusbar id="status-bar">
+    <statusbarpanel context="gm-context-menu" mousethrough="never"
+                    onclick="gGMailNotifier.login(event)" label="" tooltip="gm-notifier-tooltip"
+                    id="gm-notifier-statusbar" insertafter="statusbar-resizerpanel"
+                    logged-in="false" newMail="false">
+    </statusbarpanel>
+  </statusbar>
+</overlay>
+

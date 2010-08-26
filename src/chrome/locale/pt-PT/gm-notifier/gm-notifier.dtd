@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Versão">
+<!ENTITY notifier-about-author.label "Autor">
+<!ENTITY notifier-about-translator.label "Tradutor:">
+<!ENTITY notifier-about-translator.name "Carlos Simão">
+<!ENTITY notifier-about-legal.label "Esta extensão não está afiliada ou endossada pelo Google">
+<!ENTITY notifier-login.title "&gm-notifier.name; Início de sessão">
+<!ENTITY notifier-login-username.label "Nome de Utilizador:">
+<!ENTITY notifier-login-username.accesskey "U">
+<!ENTITY notifier-login-password.label "Senha:">
+<!ENTITY notifier-login-password.accesskey "S">
+<!ENTITY notifier-login-remember-password.label "Lembrar senha">
+<!ENTITY notifier-login-button-login.label "Iniciar sessão">
+<!ENTITY gm-notifier-context-menu-prefs.label "Preferências">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "P">
+<!ENTITY gm-notifier-context-menu-logout.label "Sair">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "a">
+<!ENTITY gm-notifier-context-menu-checknow.label "Verificar agora">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "e">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Mostrar o item na barra de estado">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "b">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Desinstalar">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "n">
+<!ENTITY gm-notifier-context-menu-accounts.label "Contas">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Gerir">
+<!ENTITY gm-notifier-tooltip-login.label "Clique para iniciar sessão.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Ligado como">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; Preferências">
+<!ENTITY notifier.prefs.groupbox.ui "Interface do Utilizador">
+<!ENTITY notifier.prefs.statusbar.show.label "Mostra item da barra de estado">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "d">
+<!ENTITY notifier.prefs.statusbar.position.label "na posição">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "a">
+<!ENTITY notifier.prefs.logged_in.label "Quando ligado:">
+<!ENTITY notifier.prefs.load.location "ao clicar no ícone de notificação abrir o Gmail">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "No Separador actual">
+<!ENTITY notifier.prefs.load.location.new_tab "Num Novo separador">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "Num Novo separador escondido">
+<!ENTITY notifier.prefs.load.location.new_window "Numa Nova janela">
+<!ENTITY notifier.prefs.load.reset_counter.label "reiniciar o contador quando clica no ícone de notificação">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "mostra a etiqueta.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "t">
+<!ENTITY notifier.prefs.counter.type.label "apenas avisar de correio não lido na caixa de entrada.">
+<!ENTITY notifier.prefs.counter.type.accesskey "v">
+<!ENTITY notifier.prefs.ui.multiaccount.label "activar múltiplas contas">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "Notificações">
+<!ENTITY notifier.prefs.notification.enable.label "Mostra notificação do sistema para novas mensagens.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "Continuar a mostrar até que o contador mude.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "Tocar um som (apenas .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "T">
+<!ENTITY notifier.prefs.soundnotification.select "Seleccionar">
+<!ENTITY notifier.prefs.soundnotification.preview "Ouvir">
+<!ENTITY notifier.prefs.groupbox.connection "Ligação">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Verificar por novo correio a cada">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minutos.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "V">
+<!ENTITY notifier.prefs.autologin "Iniciar sessão automaticamente.">
+<!ENTITY notifier.prefs.autologin.accesskey "c">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Utilizar ligações não seguras.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "ç">
+<!ENTITY notifier.prefs.debugconsole.value "Consola">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; Contas">
+<!ENTITY notifier.accounts.listheader.username.label "Nome de utilizador">
+<!ENTITY notifier.accounts.listheader.online.label "Ligado">
+<!ENTITY notifier.accounts.listheader.autologin.label "Iniciar auto">
+<!ENTITY notifier.accounts.listheader.status.label "Estado">
+<!ENTITY notifier.accounts.grid.username.label "Nome de utilizador:">
+<!ENTITY notifier.accounts.grid.username.accesskey "U">
+<!ENTITY notifier.accounts.grid.username.save.label "Guardar">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "G">
+<!ENTITY notifier.accounts.grid.username.password.label "Senha">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "S">
+<!ENTITY notifier.accounts.grid.autologin.label "Iniciar sessão automaticamente">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Editar Utilizador">
+<!ENTITY notifier.accounts.buttons.add.label "Adicionar">
+<!ENTITY notifier.accounts.buttons.add.accesskey "A">
+<!ENTITY notifier.accounts.buttons.remove.label "Remover">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Consola">
+<!ENTITY notifier.debugconsole.clearButton.label "Limpar">

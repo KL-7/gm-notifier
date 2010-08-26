@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+<?xul-overlay href="chrome://gm-notifier/content/gm-core-overlay.xul"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<overlay id="gm-ff-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <popupset id="mainPopupSet">
+    <popup id="gm-context-menu">
+    </popup>
+  </popupset>
+
+  <!-- overlay an entry into the toolbar customization panel -->
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="gm-notifier-toolbar-item" type="menu-button" disabled="false"
+                   label="&gm-notifier.name;" title="&gm-notifier.name;" oncommand="gGMailNotifier.login(event)"
+                   onclick="gGMailNotifier.openMiddleClick(event)" newMail="false"
+                   logged-in="false" unread="" showFolders="false" context="gm-context-menu">
+      <menupopup context="" id="gm-notifier-toolbar-item-menupopup"/>
+    </toolbarbutton>
+  </toolbarpalette>
+
+</overlay>

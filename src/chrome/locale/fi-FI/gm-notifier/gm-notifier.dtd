@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Versio">
+<!ENTITY notifier-about-author.label "Tekijä">
+<!ENTITY notifier-about-translator.label "Suomennos">
+<!ENTITY notifier-about-translator.name "Villae / www.xvidsubs.com">
+<!ENTITY notifier-about-legal.label "Tämä ei ole Googlen tekemä tai tukema lisäosa.">
+<!ENTITY notifier-login.title "&gm-notifier.name; -kirjautuminen">
+<!ENTITY notifier-login-username.label "Käyttäjätunnus:">
+<!ENTITY notifier-login-username.accesskey "K">
+<!ENTITY notifier-login-password.label "Salasana:">
+<!ENTITY notifier-login-password.accesskey "S">
+<!ENTITY notifier-login-remember-password.label "Muista salasana.">
+<!ENTITY notifier-login-button-login.label "Kirjaudu">
+<!ENTITY gm-notifier-context-menu-prefs.label "Asetukset">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "A">
+<!ENTITY gm-notifier-context-menu-logout.label "Kirjaudu ulos">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "K">
+<!ENTITY gm-notifier-context-menu-checknow.label "Tarkista uudet viesti nyt">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "u">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Näytä painike tilarivillä">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "N">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Poista lisäosa">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "P">
+<!ENTITY gm-notifier-context-menu-accounts.label "Tunnukset">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Hallitse">
+<!ENTITY gm-notifier-tooltip-login.label "Klikkaa kirjautuaksesi sisään.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Kirjautunut sisään tunnuksella">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; -asetukset">
+<!ENTITY notifier.prefs.groupbox.ui "Käyttöliittymä">
+<!ENTITY notifier.prefs.statusbar.show.label "Näytä tilarivin ikoni">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "t">
+<!ENTITY notifier.prefs.statusbar.position.label "sijainnissa">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "s">
+<!ENTITY notifier.prefs.logged_in.label "Sisäänkirjautuneena:">
+<!ENTITY notifier.prefs.load.location "Ikonin klikkaaminen avaa Gmailin ">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "Nykyiseen välilehteen">
+<!ENTITY notifier.prefs.load.location.new_tab "Uuteen välilehteen">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "Uuteen välilehteen taustalle">
+<!ENTITY notifier.prefs.load.location.new_window "Uuteen ikkunaan">
+<!ENTITY notifier.prefs.load.reset_counter.label "Nollaa laskuri kun ikonia klikataan.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "l">
+<!ENTITY notifier.prefs.load.folderUI.label "Näytä Gmailin &apos;otsikot&apos; kun pidän hiirtä ikonin päällä.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "o">
+<!ENTITY notifier.prefs.counter.type.label "Ilmoita vain Postilaatikko-kansion uusista viesteistä.">
+<!ENTITY notifier.prefs.counter.type.accesskey "P">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Ota monen tunnuksen tuki käyttöön">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "Ilmoitukset">
+<!ENTITY notifier.prefs.notification.enable.label "Näytä ilmoitus uudesta viestistä.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "N">
+<!ENTITY notifier.prefs.notification.repeat.label "Näytä kunnes lukemattomien viestien määrä vaihtuu.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "k">
+<!ENTITY notifier.prefs.soundnotification.play.label "Toista äänitiedosto ( vain .wav-tiedostoja):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "ä">
+<!ENTITY notifier.prefs.soundnotification.select "Valitse">
+<!ENTITY notifier.prefs.soundnotification.preview "Kuuntele">
+<!ENTITY notifier.prefs.groupbox.connection "Yhteys">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Tarkista uudet viestit joka">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minuutti.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "u">
+<!ENTITY notifier.prefs.autologin "Kirjaudu automaattisesti sisään.">
+<!ENTITY notifier.prefs.autologin.accesskey "a">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Käytä suojaamatonta yhteyttä.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Konsoli">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; -tunnukset">
+<!ENTITY notifier.accounts.listheader.username.label "Tunnus">
+<!ENTITY notifier.accounts.listheader.online.label "Kirjautunut">
+<!ENTITY notifier.accounts.listheader.autologin.label "Kirjaudu automaattisesti">
+<!ENTITY notifier.accounts.listheader.status.label "Tila">
+<!ENTITY notifier.accounts.grid.username.label "Käyttäjätunnus:">
+<!ENTITY notifier.accounts.grid.username.accesskey "k">
+<!ENTITY notifier.accounts.grid.username.save.label "Tallenna">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "t">
+<!ENTITY notifier.accounts.grid.username.password.label "Salasana:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "s">
+<!ENTITY notifier.accounts.grid.autologin.label "Kirjaudu automaattisesti.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "a">
+<!ENTITY notifier.accounts.groupbox.label "Muokkaa tunnusta">
+<!ENTITY notifier.accounts.buttons.add.label "Lisää">
+<!ENTITY notifier.accounts.buttons.add.accesskey "l">
+<!ENTITY notifier.accounts.buttons.remove.label "Poista">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "p">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; -konsoli">
+<!ENTITY notifier.debugconsole.clearButton.label "Tyhjennä">

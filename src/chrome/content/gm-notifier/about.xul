@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<dialog buttons="accept"
+        title="&gm-notifier.name;"
+        id="notifier-about-dialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="startup()">
+
+  <script>
+    function startup() {
+      if (document.getElementById("translator").value != "") {
+        document.getElementById("translator-box").collapsed = false;
+      }
+    }
+  </script>
+
+  <vbox id="notifier-about" flex="1">
+    <hbox style="padding:0px; margin:0px;">
+      <vbox style="padding:0px; margin:0px;">
+        <label style="padding-left:4px; min-width:250px; margin:0px;" value="&gm-notifier.name;" class="notifier-about-name"/>
+        <hbox>
+          <label value="&notifier-about-version.label;"/>
+          <label class="notifier-about-version" value="0.6.4.1" />
+        </hbox>
+      </vbox>
+      <spacer flex="1"/>
+      <vbox>
+        <image style="padding:3px;" src="chrome://gm-notifier/content/gm-logo.png" />
+        <spacer flex="1"/>
+      </vbox>
+    </hbox>
+
+    <label value="&notifier-about-author.label;" class="notifier-about-title"/>
+    <hbox align="center">
+      <label value="Doron Rosenberg (gmn.feedback@gmail.com)"/>
+     </hbox>
+
+    <vbox id="translator-box" collapsed="true">
+      <label id="translator" value="&notifier-about-translator.label;" class="notifier-about-title"/>
+      <label value="&notifier-about-translator.name;"/>
+    </vbox>
+
+    <description style="margin-top:10px;">&notifier-about-legal.label;</description>
+  </vbox>
+  <separator class="groove" id="notifier-about-about-separator"/>
+</dialog>

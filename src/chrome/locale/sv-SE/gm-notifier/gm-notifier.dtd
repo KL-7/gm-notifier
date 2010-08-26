@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Version">
+<!ENTITY notifier-about-author.label "Skapare">
+<!ENTITY notifier-about-translator.label "Översättare">
+<!ENTITY notifier-about-translator.name "milq">
+<!ENTITY notifier-about-legal.label "Denna extension har inget att göra med Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name; Logga in">
+<!ENTITY notifier-login-username.label "Användarnamn:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "Lösenord">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "Kom ihåg lösenordet.">
+<!ENTITY notifier-login-button-login.label "Logga in">
+<!ENTITY gm-notifier-context-menu-prefs.label "Inställningar">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "Logga ut">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "Kolla nu">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Visa statusbarartikel">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Avinstallera">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "Konton">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Hantera">
+<!ENTITY gm-notifier-tooltip-login.label "Klicka för att logga in.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Inloggad som">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; Inställningar">
+<!ENTITY notifier.prefs.groupbox.ui "Användargränssnitt">
+<!ENTITY notifier.prefs.statusbar.show.label "Visa statusbarartikel">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "på position">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "När inloggad:">
+<!ENTITY notifier.prefs.load.location "När jag klickar på ikonen öppnas Gmail i">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "Aktiv flik">
+<!ENTITY notifier.prefs.load.location.new_tab "Ny flik">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "Ny ofokuserad flik">
+<!ENTITY notifier.prefs.load.location.new_window "Nytt fönster">
+<!ENTITY notifier.prefs.load.reset_counter.label "Nollställ räknaren när jag klickar på ikonen.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "Visa etikett-dropdown.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "Visa bara oläst mail i inkorgen.">
+<!ENTITY notifier.prefs.counter.type.accesskey "l">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Möjliggör multipla konton">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "Notifieringar">
+<!ENTITY notifier.prefs.notification.enable.label "Visa systemnotifiering för nytt mail.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "Fortsätt visa tills olästräknaren ändras.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "Spela ljud (enbart .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "Välj">
+<!ENTITY notifier.prefs.soundnotification.preview "Förhandsgranska">
+<!ENTITY notifier.prefs.groupbox.connection "Anslutning">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Kolla efter nya mail var">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minut.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "Logga in automatiskt.">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Använd osäkra anslutningar.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Konsoll">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; Konton">
+<!ENTITY notifier.accounts.listheader.username.label "Användarnamn">
+<!ENTITY notifier.accounts.listheader.online.label "Online">
+<!ENTITY notifier.accounts.listheader.autologin.label "Auto-login">
+<!ENTITY notifier.accounts.listheader.status.label "Status">
+<!ENTITY notifier.accounts.grid.username.label "Användarnamn:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "Spara">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "Lösenord">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "Logga in automatiskt.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Redigera användare">
+<!ENTITY notifier.accounts.buttons.add.label "Lägg till">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "Ta bort">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Konsoll">
+<!ENTITY notifier.debugconsole.clearButton.label "Rensa">

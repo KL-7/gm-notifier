@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Versió">
+<!ENTITY notifier-about-author.label "Autor">
+<!ENTITY notifier-about-translator.label "Traductor">
+<!ENTITY notifier-about-translator.name "Oriol Gonzalez">
+<!ENTITY notifier-about-legal.label "Aquesta extensió no està afiliada a Google.">
+<!ENTITY notifier-login.title "Connexió al &gm-notifier.name;">
+<!ENTITY notifier-login-username.label "Usuari:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "Paraula de pas:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "Recordar la paraula de pas">
+<!ENTITY notifier-login-button-login.label "Connecta">
+<!ENTITY gm-notifier-context-menu-prefs.label "Preferències">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "Desconnecta">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "D">
+<!ENTITY gm-notifier-context-menu-checknow.label "Comprova ara">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Mostra l&apos;element a la barra d&apos;estat">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "M">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Desinstal·la">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "l">
+<!ENTITY gm-notifier-context-menu-accounts.label "Comptes">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Administració">
+<!ENTITY gm-notifier-tooltip-login.label "Feu clic per connectar">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Connectat com a ">
+<!ENTITY notifier.prefs.name "Preferències del &gm-notifier.name;">
+<!ENTITY notifier.prefs.groupbox.ui "Interfície d&apos;usuari">
+<!ENTITY notifier.prefs.statusbar.show.label "Mostra l&apos;element a la barra d&apos;estat">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "m">
+<!ENTITY notifier.prefs.statusbar.position.label "a la posició">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "Quan estigui connectat:">
+<!ENTITY notifier.prefs.load.location "Si feu clic a la icona del notificador s&apos;obrirà la safata d&apos;entrada a:">
+<!ENTITY notifier.prefs.load.location.accesskey "c">
+<!ENTITY notifier.prefs.load.location.current_tab "la pestanya actual">
+<!ENTITY notifier.prefs.load.location.new_tab "una pestanya nova">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "una pestanya nova sense focus">
+<!ENTITY notifier.prefs.load.location.new_window "una finestra nova">
+<!ENTITY notifier.prefs.load.reset_counter.label "reinicia el comptador quan faci clic a la icona del notificador">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "n">
+<!ENTITY notifier.prefs.load.folderUI.label "mostra l&apos;etiqueta desplegable">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "e">
+<!ENTITY notifier.prefs.counter.type.label "notifica només el correu sense llegir de la safata d&apos;entrada">
+<!ENTITY notifier.prefs.counter.type.accesskey "s">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Habilita múltiples comptes">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "H">
+<!ENTITY notifier.prefs.groupbox.notifications "Notificacions">
+<!ENTITY notifier.prefs.notification.enable.label "Mostra notificacions per al correu nou">
+<!ENTITY notifier.prefs.notification.enable.accesskey "t">
+<!ENTITY notifier.prefs.notification.repeat.label "Continua mostrant fins que canvïi el comptador de missatges sense llegir">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "f">
+<!ENTITY notifier.prefs.soundnotification.play.label "Reprodueix un so (només .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "R">
+<!ENTITY notifier.prefs.soundnotification.select "Selecciona">
+<!ENTITY notifier.prefs.soundnotification.preview "Reprodueix">
+<!ENTITY notifier.prefs.groupbox.connection "Connexió">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Comprova el correu nou cada">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minuts.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "v">
+<!ENTITY notifier.prefs.autologin "Connecta automàticament">
+<!ENTITY notifier.prefs.autologin.accesskey "i">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Utilitza connexions no segures">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Consola">
+<!ENTITY notifier.accounts.window.title "Comptes del &gm-notifier.name;">
+<!ENTITY notifier.accounts.listheader.username.label "Usuari">
+<!ENTITY notifier.accounts.listheader.online.label "Connectat">
+<!ENTITY notifier.accounts.listheader.autologin.label "Connecta automàticament">
+<!ENTITY notifier.accounts.listheader.status.label "Estat">
+<!ENTITY notifier.accounts.grid.username.label "Usuari:">
+<!ENTITY notifier.accounts.grid.username.accesskey "U">
+<!ENTITY notifier.accounts.grid.username.save.label "Desa">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "a">
+<!ENTITY notifier.accounts.grid.username.password.label "Paraula de pas:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "Connecta automàticament">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Edita l&apos;usuari">
+<!ENTITY notifier.accounts.buttons.add.label "Afegeix">
+<!ENTITY notifier.accounts.buttons.add.accesskey "g">
+<!ENTITY notifier.accounts.buttons.remove.label "Elimina">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "E">
+<!ENTITY notifier.debugconsole.title "Consola del &gm-notifier.name;">
+<!ENTITY notifier.debugconsole.clearButton.label "Neteja">

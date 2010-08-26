@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "バージョン">
+<!ENTITY notifier-about-author.label "製作者">
+<!ENTITY notifier-about-translator.label "日本語翻訳者">
+<!ENTITY notifier-about-translator.name "Hadakadenkyu, Premier">
+<!ENTITY notifier-about-legal.label "この拡張機能は Google と提携及び公認されたものではありません">
+<!ENTITY notifier-login.title "&gm-notifier.name; ログイン">
+<!ENTITY notifier-login-username.label "ユーザ名:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "パスワード:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "パスワードを記憶">
+<!ENTITY notifier-login-button-login.label "ログイン">
+<!ENTITY gm-notifier-context-menu-prefs.label "設定">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "ログアウト">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "今すぐチェック">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "ステータスバーにアイコンを表示する">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "アンインストール">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "アカウント">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "管理">
+<!ENTITY gm-notifier-tooltip-login.label "クリックでログイン画面へ">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "ログインユーザ:">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; 設定">
+<!ENTITY notifier.prefs.groupbox.ui "ユーザインターフェース">
+<!ENTITY notifier.prefs.statusbar.show.label "ステータスバーにアイコンを表示する">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "アイコンの位置 (数字で指定)">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "ログイン後:">
+<!ENTITY notifier.prefs.load.location "アイコンをクリックした時に Gmail を">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "現在のタブに開く">
+<!ENTITY notifier.prefs.load.location.new_tab "新しいタブに開く">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "新しいタブ（フォーカスなし）に開く">
+<!ENTITY notifier.prefs.load.location.new_window "新しいウィンドウに開く">
+<!ENTITY notifier.prefs.load.reset_counter.label "アイコンをクリックした時に未読数をリセットする">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "ラベルをドロップダウンで表示する">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "未読メールのみを通知する">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+<!ENTITY notifier.prefs.ui.multiaccount.label "複数アカウントを有効にする">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "通 知">
+<!ENTITY notifier.prefs.notification.enable.label "メールの着信をシステムイベントで通知する">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "未読メッセージ数が更新完了するまで表示する">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "イベント発生時に音声ファイルを再生する (.wav のみ)">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "参 照">
+<!ENTITY notifier.prefs.soundnotification.preview "再 生">
+<!ENTITY notifier.prefs.groupbox.connection "接 続">
+<!ENTITY notifier.prefs.newmail.check.label-1 "新着メールを">
+<!ENTITY notifier.prefs.newmail.check.label-2 "分毎に確認する">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "起動時に自動的にログインする">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "HTTP（セキュアでない方式）で接続する">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "コンソール表示">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; アカウント管理">
+<!ENTITY notifier.accounts.listheader.username.label "ユーザ名">
+<!ENTITY notifier.accounts.listheader.online.label "オンライン">
+<!ENTITY notifier.accounts.listheader.autologin.label "自動ログイン">
+<!ENTITY notifier.accounts.listheader.status.label "状態">
+<!ENTITY notifier.accounts.grid.username.label "ユーザ名：">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "保存">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "パスワード">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "自動ログイン">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "ユーザ編集">
+<!ENTITY notifier.accounts.buttons.add.label "追加">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "削除">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; コンソール">
+<!ENTITY notifier.debugconsole.clearButton.label "消去">

@@ -1,0 +1,62 @@
+/*
+
+*/
+
+#include "nsISupports.idl"
+#include "nsIGMNotifierProgressListener.idl"
+
+[scriptable, uuid(1d024ea4-5432-4831-9241-c99a85a9d2b4)]
+interface nsIGMNotifierService : nsISupports
+{
+  void initLogin(in string aUsername, in string aPassword, in long aListenerID);
+  void checkNow();
+  void logout();
+  void logoutUser(in string aUsername);
+  void loginUser(in string aUsername);
+  void loadUserCookies(in string aUsername);
+
+  long addListener(in nsIGMNotifierProgressListener aListener);
+  void removeListener(in nsIGMNotifierProgressListener aListener);
+
+  boolean getResetState(in string aUsername);
+  void setResetState(in string aUsername, in boolean aResetState);
+
+  boolean getNewMailMode(in string aUsername);
+  void setNewMailMode(in string aUsername, in boolean aMode);
+
+  long getUnreadCount(in string aUsername);
+  long getNewCount(in string aUsername);
+  string getUsedMB(in string aUsername);
+  string getSpaceUsed(in string aUsername);
+  string getTotalSpace(in string aUsername);
+  long getInboxUnread(in string aUsername);
+  long getDisplayCount(in string aUsername);
+
+  long getFolderCount(in string aUsername);
+  void getFolderItem(in string aUsername, in long aPosition, out unsigned long aCount,
+                     [array, size_is(aCount), retval] out string aFolderInfo);
+
+  long getActiveUserCount();
+
+  const short USER_STATE_LOGGED_OUT      = 0;
+  const short USER_STATE_LOGGED_IN       = 1;
+  const short USER_STATE_INVALID_DETAILS = 2;
+
+  long getUserCount();
+  string getUserName(in long aUserNum);
+  short getUserState(in string aUsername);
+  void removeUser(in string aUsername);
+  void addUser(in string aUsername);
+
+  long getQueueCount();
+  string getQueueUserName(in long aUserNum);
+
+  boolean isHostedDomain(in string aUsername);
+  string getHostedDomain(in string aUsername);
+
+  void setTimeout(in long aMinutes);
+
+  void logItem(in string aLogString);
+  string getLog();
+  void clearLog();
+};

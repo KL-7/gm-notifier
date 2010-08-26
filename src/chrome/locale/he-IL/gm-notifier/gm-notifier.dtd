@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "גירסה">
+<!ENTITY notifier-about-author.label "מחבר">
+<!ENTITY notifier-about-translator.label "Hatul">
+<!ENTITY notifier-about-translator.name "Hatul">
+<!ENTITY notifier-about-legal.label "ההרחבה לא פותחה או אושרה על ידי Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name; התחברות">
+<!ENTITY notifier-login-username.label "שם משתמש:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "סיסמה:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "זכור סיסמה.">
+<!ENTITY notifier-login-button-login.label "התחברות">
+<!ENTITY gm-notifier-context-menu-prefs.label "מאפיינים">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "התנתק">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "בדוק עכשיו">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "הצג צלמית בשורת המצב">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "הסרה">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "חשבונות">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "נהל">
+<!ENTITY gm-notifier-tooltip-login.label "לחץ להתחברות.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "התחבר כ- ">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; מאפיינים">
+<!ENTITY notifier.prefs.groupbox.ui "ממשק משתמש">
+<!ENTITY notifier.prefs.statusbar.show.label "הצג צלמית בשורת המצב">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "במיקום">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "כשאני מתחבר:">
+<!ENTITY notifier.prefs.load.location "לחץ על סמל המודיע כדי לפתוח את Gmail ב- ">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "לשונית הנוכחית">
+<!ENTITY notifier.prefs.load.location.new_tab "לשונית חדשה">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "לשונית חדשה ברקע">
+<!ENTITY notifier.prefs.load.location.new_window "חלון חדש">
+<!ENTITY notifier.prefs.load.reset_counter.label "אפס מונה כשלוחצים על סמל המודיע.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "הצג פירוט של התוויות.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "דווח רק על הודעות שלא נקראו בדואר הנכנס.">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+<!ENTITY notifier.prefs.ui.multiaccount.label "אפשר חשבונות מרובים">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "התראות">
+<!ENTITY notifier.prefs.notification.enable.label "הצג הודעת מערכת עבור דואר חדש.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "המשך להציג עד שמספר ההודעות שלא נקראו משתנה.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "נגן צליל (.wav בלבד):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "בחר">
+<!ENTITY notifier.prefs.soundnotification.preview "השמע">
+<!ENTITY notifier.prefs.groupbox.connection "התחברות">
+<!ENTITY notifier.prefs.newmail.check.label-1 "בדוק דואר חדש כל">
+<!ENTITY notifier.prefs.newmail.check.label-2 "דקות.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "כניסה אוטומטית.">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "השתמש בחיבור לא מאובטח.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Console">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; חשבונות">
+<!ENTITY notifier.accounts.listheader.username.label "שם משתמש">
+<!ENTITY notifier.accounts.listheader.online.label "מחובר">
+<!ENTITY notifier.accounts.listheader.autologin.label "כניסה אוטומטית ">
+<!ENTITY notifier.accounts.listheader.status.label "מצב">
+<!ENTITY notifier.accounts.grid.username.label "שם משתמש:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "שמירה">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "סיסמה:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "כניסה אוטומטית.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "ערוך משתמש">
+<!ENTITY notifier.accounts.buttons.add.label "הוסף">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "הסר">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Console">
+<!ENTITY notifier.debugconsole.clearButton.label "נקה">

@@ -1,0 +1,1 @@
+Here are some minor changes to the original Gmail Notifier Firefox extension.

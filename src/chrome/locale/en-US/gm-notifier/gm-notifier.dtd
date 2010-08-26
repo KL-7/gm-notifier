@@ -1,0 +1,147 @@
+<!-- Common -->
+<!ENTITY gm-notifier.name "Gmail Notifier">
+
+<!-- About window -->
+<!ENTITY notifier-about-version.label "Version">
+<!ENTITY notifier-about-author.label "Author">
+
+<!ENTITY notifier-about-translator.label "">
+<!ENTITY notifier-about-translator.name "">
+
+<!ENTITY notifier-about-legal.label "This extension is not affiliated or endorsed by Google.">
+
+<!-- Login window -->
+<!ENTITY notifier-login.title "&gm-notifier.name; Login">
+
+<!ENTITY notifier-login-username.label "Username:">
+<!ENTITY notifier-login-username.accesskey "u">
+
+<!ENTITY notifier-login-password.label "Password:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "Remember password.">
+
+<!ENTITY notifier-login-button-login.label "Login">
+
+<!-- Context Menu -->
+<!ENTITY gm-notifier-context-menu-prefs.label "Preferences">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+
+<!ENTITY gm-notifier-context-menu-logout.label "Log Out">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+
+<!ENTITY gm-notifier-context-menu-checknow.label "Check Now">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Show Statusbar Item">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+
+<!ENTITY gm-notifier-context-menu-uninstall.label "Uninstall">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+
+<!ENTITY gm-notifier-context-menu-accounts.label "Accounts">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Manage">
+
+<!-- Tooltip -->
+<!ENTITY gm-notifier-tooltip-login.label "Click to log in.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Logged in as ">
+
+<!-- Prefs Window -->
+<!ENTITY notifier.prefs.name "&gm-notifier.name; Preferences">
+
+<!ENTITY notifier.prefs.groupbox.ui "User Interface">
+
+<!ENTITY notifier.prefs.statusbar.show.label "Show statusbar item">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+
+<!ENTITY notifier.prefs.statusbar.position.label "at position">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+
+<!ENTITY notifier.prefs.logged_in.label "When logged in:">
+
+<!ENTITY notifier.prefs.load.location "clicking the notifier icon opens Gmail in ">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "Current tab">
+<!ENTITY notifier.prefs.load.location.new_tab "New tab">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "New unfocused tab">
+<!ENTITY notifier.prefs.load.location.new_window "New window">
+
+<!ENTITY notifier.prefs.load.reset_counter.label "reset counter when the notifier icon is clicked.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+
+<!ENTITY notifier.prefs.load.folderUI.label "show the label dropdown.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+
+<!ENTITY notifier.prefs.counter.type.label "only report unread mail in the Inbox.">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+
+<!ENTITY notifier.prefs.ui.multiaccount.label "Enable multiple accounts">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+
+<!ENTITY notifier.prefs.groupbox.notifications "Notifications">
+<!ENTITY notifier.prefs.notification.enable.label "Show system notification for new mail.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+
+<!ENTITY notifier.prefs.notification.repeat.label "Continue showing until unread count changes.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+
+<!ENTITY notifier.prefs.soundnotification.play.label "Play a sound (.wav only):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "Select">
+<!ENTITY notifier.prefs.soundnotification.preview "Preview">
+
+<!ENTITY notifier.prefs.groupbox.connection "Connection">
+
+<!ENTITY notifier.prefs.newmail.check.label-1 "Check for new mail every">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minutes.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+
+<!ENTITY notifier.prefs.autologin "Automatically log in.">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Use unsecure connections.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+
+<!ENTITY notifier.prefs.debugconsole.value "Console">
+
+<!-- Manage Accounts Window -->
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; Accounts">
+
+<!ENTITY notifier.accounts.listheader.username.label "Username">
+<!ENTITY notifier.accounts.listheader.online.label "Online">
+<!ENTITY notifier.accounts.listheader.autologin.label "Auto-login">
+<!ENTITY notifier.accounts.listheader.status.label "Status">
+
+<!ENTITY notifier.accounts.grid.username.label "Username:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+
+<!ENTITY notifier.accounts.grid.username.save.label "Save">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+
+<!ENTITY notifier.accounts.grid.username.password.label "Password:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+
+<!ENTITY notifier.accounts.grid.autologin.label "Automatically log in.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+
+<!ENTITY notifier.accounts.groupbox.label "Edit User">
+
+<!ENTITY notifier.accounts.buttons.add.label "Add">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+
+<!ENTITY notifier.accounts.buttons.remove.label "Remove">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+
+<!-- Debug Console -->
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Console">
+<!ENTITY notifier.debugconsole.clearButton.label "Clear">
+
+<!ENTITY notifier.debugconsole.submitDescription "Submitting a log can help fix bugs in the notifier.  Once submitted, a handle id will be generated for the submitted data.">
+<!ENTITY notifier.debugconsole.privacyDescription "No private data will be submitted.">
+
+<!ENTITY notifier.debugconsole.submitButton.label "Submit">
+<!ENTITY notifier.debugconsole.submitButton.accesskey "S">
+
+<!ENTITY notifier.debugconsole.handleDescriptionLabel "Description:">
+<!ENTITY notifier.debugconsole.handleLabel "Handle:">
+
+

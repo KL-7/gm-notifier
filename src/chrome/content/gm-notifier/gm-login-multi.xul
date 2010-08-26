@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://global/skin/browser.css" type="text/css"?>
+
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="gm--notifier-login"
+        onload="return onLoad();"
+        ondialogaccept="return onAccept();"
+        buttons="accept"
+        title="&notifier-login.title;" style="padding:0px;"
+        persist="screenX screenY">
+
+  <script type="application/x-javascript">
+    <![CDATA[
+    const nsIGMNotifierProgressListener = Components.interfaces.nsIGMNotifierProgressListener;
+
+    var gNotifierService = null;
+    var gNotifierProgressListener = null;
+
+    function onLoad() {
+      gNotifierService = Components.classes["@mozilla.org/GMailNotifier;1"].getService(Components.interfaces.nsIGMNotifierService);
+
+      // create ui - base on user queue
+      var usercount = gNotifierService.getQueueCount();
+
+      var username, row, label, image, progress, button;
+      var rows = document.getElementById("userrows");
+      for (var i = 0; i < usercount; i++) {
+        username = gNotifierService.getQueueUserName(i);
+
+        row = document.createElement("row");
+        row.setAttribute("align", "center");
+        row.className = "multilogin-row";
+
+        label = document.createElement("label");
+        label.setAttribute("value", username);
+        row.appendChild(label);
+
+        image = document.createElement("image");
+        image.setAttribute("id", "progress-image-"+username);
+        row.appendChild(image);
+
+        progress = document.createElement("progressmeter");
+        progress.setAttribute("id", "progress-" + username);
+        progress.setAttribute("value", 0);
+        progress.setAttribute("mode", "undetermined");
+        row.appendChild(progress);
+
+        rows.appendChild(row);
+      }
+
+      // register listener
+      gNotifierProgressListener = new NotifierProgressListener();
+      gNotifierService.addListener(gNotifierProgressListener);
+
+      gNotifierService.checkNow();
+    }
+
+    var NotifierProgressListener = function() {
+      return ({
+        getID : function () { return null; },
+
+        onStateChange : function (aUsername, aState) {
+          var progressMeter = document.getElementById("progress-" + aUsername);
+
+          if (aState == nsIGMNotifierProgressListener.LOGIN_INITIATED) {
+            progressMeter.setAttribute("mode", "determined");
+            progressMeter.setAttribute("value", "33%");
+            document.getElementById("progress-image-" + aUsername).setAttribute("src", "chrome://global/skin/throbber/Throbber-small.gif");
+          } else if (aState == nsIGMNotifierProgressListener.LOGIN_FAILED) {
+            var label = document.createElement("label");
+            label.setAttribute("value", getStringFromBundle("LoggingStatusFailed1"));
+            progressMeter.parentNode.replaceChild(label, progressMeter);
+
+            document.getElementById("progress-image-" + aUsername).removeAttribute("src");
+          } else if (aState == nsIGMNotifierProgressListener.LOGIN_DETAILS_INVALID) {
+            var label = document.createElement("label");
+            label.setAttribute("value", getStringFromBundle("UserStateInvalidDetails"));
+            progressMeter.parentNode.replaceChild(label, progressMeter);
+
+            document.getElementById("progress-image-" + aUsername).removeAttribute("src");
+          } else if (aState == nsIGMNotifierProgressListener.LOGIN_SUCCESS) {
+            progressMeter.setAttribute("value", "66%");
+          } else if (aState == nsIGMNotifierProgressListener.NO_NEW_MAIL || aState == nsIGMNotifierProgressListener.NEW_MAIL) {
+            progressMeter.setAttribute("value", "100%");
+            document.getElementById("progress-image-" + aUsername).removeAttribute("src");
+          } else if (aState == nsIGMNotifierProgressListener.ACCOUNTS_CHECK_COMPLETED) {
+            // give a small timeout interval to let the UI finish it's updating
+            setTimeout(onAccept, 800);
+          }
+        },
+
+        QueryInterface : function(aIID) {
+          if (aIID.equals(nsIGMNotifierProgressListener) ||
+              aIID.equals(Components.interfaces.nsISupports))
+            return this;
+          throw Components.results.NS_NOINTERFACE;
+        }
+      });
+    }
+
+    function getStringFromBundle(aName) {
+      var strbundle = document.getElementById("strings");
+      return strbundle.getString(aName);
+    }
+
+    function onAccept() {
+      // unregister listener
+      gNotifierService.removeListener(gNotifierProgressListener);
+
+      // cleanup
+      gNotifierProgressListener = null;
+      gNotifierService = null;
+
+      window.close();
+    }
+    ]]>
+  </script>
+
+  <stringbundle id="strings" src="chrome://gm-notifier/locale/gm-notifier.properties"/>
+
+  <grid class="multilogin-users">
+    <columns>
+      <column />
+      <column style="min-width:16px;"/>
+      <column flex="1"/>
+    </columns>
+
+    <rows id="userrows">
+    </rows>
+  </grid>
+</dialog>
+

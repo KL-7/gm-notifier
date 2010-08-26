@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail 通知">
+<!ENTITY notifier-about-version.label "版本">
+<!ENTITY notifier-about-author.label "作者">
+<!ENTITY notifier-about-translator.label "翻译：">
+<!ENTITY notifier-about-translator.name "冯超">
+<!ENTITY notifier-about-legal.label "本扩展并非由 Google 提供或认证。">
+<!ENTITY notifier-login.title "&gm-notifier.name; 登录">
+<!ENTITY notifier-login-username.label "用户名：">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "密码：">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "记住密码。">
+<!ENTITY notifier-login-button-login.label "登录">
+<!ENTITY gm-notifier-context-menu-prefs.label "首选项">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "登出">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "立即检查">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "在状态栏显示">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "卸载">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "帐户">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "管理">
+<!ENTITY gm-notifier-tooltip-login.label "点击登录。">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "登录为">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; 首选项">
+<!ENTITY notifier.prefs.groupbox.ui "用户界面">
+<!ENTITY notifier.prefs.statusbar.show.label "在状态栏显示">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "在位置">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "登录时：">
+<!ENTITY notifier.prefs.load.location "点击通知图标时打开 Gmail 于">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "当前标签页">
+<!ENTITY notifier.prefs.load.location.new_tab "新标签页">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "新标签也，无焦点">
+<!ENTITY notifier.prefs.load.location.new_window "新窗口">
+<!ENTITY notifier.prefs.load.reset_counter.label "点击通知图标时重置计数。">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "显示下拉标签">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "仅报告收件箱中的未读邮件。">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+<!ENTITY notifier.prefs.ui.multiaccount.label "启用多帐户支持">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "通知">
+<!ENTITY notifier.prefs.notification.enable.label "有新邮件时显示系统通知。">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "在未读计数未改变时一直显示。">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "播放声音 (仅支持 .wav)">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "选择">
+<!ENTITY notifier.prefs.soundnotification.preview "预览">
+<!ENTITY notifier.prefs.groupbox.connection "连接">
+<!ENTITY notifier.prefs.newmail.check.label-1 "检查新邮件的间隔：">
+<!ENTITY notifier.prefs.newmail.check.label-2 "分钟">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "自动登录。">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "使用非安全连接。">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "控制台">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; 帐户">
+<!ENTITY notifier.accounts.listheader.username.label "用户名">
+<!ENTITY notifier.accounts.listheader.online.label "在线">
+<!ENTITY notifier.accounts.listheader.autologin.label "自动登录">
+<!ENTITY notifier.accounts.listheader.status.label "状态">
+<!ENTITY notifier.accounts.grid.username.label "用户名：">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "保存">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "密码：">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "自动登录。">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "编辑用户">
+<!ENTITY notifier.accounts.buttons.add.label "添加">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "删除">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; 控制台">
+<!ENTITY notifier.debugconsole.clearButton.label "清除">

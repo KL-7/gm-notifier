@@ -1,0 +1,4 @@
+*.xpi
+src/chrome/gm-notifier.jar
+build/
+vers/

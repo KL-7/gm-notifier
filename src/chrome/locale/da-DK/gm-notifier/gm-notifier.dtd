@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifikator">
+<!ENTITY notifier-about-version.label "Version">
+<!ENTITY notifier-about-author.label "Forfatter">
+<!ENTITY notifier-about-translator.label "Oversætter">
+<!ENTITY notifier-about-translator.name "AlleyKat">
+<!ENTITY notifier-about-legal.label "Denne udvidelse er ikke relateret til eller støttet af Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name; Logind">
+<!ENTITY notifier-login-username.label "Brugernavn:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "Kodeord">
+<!ENTITY notifier-login-password.accesskey "o">
+<!ENTITY notifier-login-remember-password.label "Husk kodeord.">
+<!ENTITY notifier-login-button-login.label "Log ind">
+<!ENTITY gm-notifier-context-menu-prefs.label "Indstillinger">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "i">
+<!ENTITY gm-notifier-context-menu-logout.label "Log ud">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "u">
+<!ENTITY gm-notifier-context-menu-checknow.label "Check nu">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Vis statuslinje-element">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "s">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Afinstaller">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "l">
+<!ENTITY gm-notifier-context-menu-accounts.label "Konti">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Administrer">
+<!ENTITY gm-notifier-tooltip-login.label "Klik for at logge ind.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Logget ind som">
+<!ENTITY notifier.prefs.name "Indstillinger">
+<!ENTITY notifier.prefs.groupbox.ui "Brugerinterface">
+<!ENTITY notifier.prefs.statusbar.show.label "Vis statuslinjeikon">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "på position">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "Når logget ind:">
+<!ENTITY notifier.prefs.load.location "klik på notificeringsikonet åbner Gmail i">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "Nuværende faneblad">
+<!ENTITY notifier.prefs.load.location.new_tab "Nyt faneblad">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "Nyt ufokuseret faneblad">
+<!ENTITY notifier.prefs.load.location.new_window "Nyt vindue">
+<!ENTITY notifier.prefs.load.reset_counter.label "nulstil tæller når notificeringsikonet klikkes.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "vis mærke-rullegardinmenu.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "m">
+<!ENTITY notifier.prefs.counter.type.label "rapporter kun ulæste emails i Indboksen.">
+<!ENTITY notifier.prefs.counter.type.accesskey "l">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Aktiver multi-konto-understøttelse">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "Notifikationer">
+<!ENTITY notifier.prefs.notification.enable.label "Vis system notifikation for ny mail (kun Windows).">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "Fortsæt visning indtil ulæst-antal ændrer sig.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "Afspil en lyd:">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "y">
+<!ENTITY notifier.prefs.soundnotification.select "Vælg">
+<!ENTITY notifier.prefs.soundnotification.preview "Afprøv">
+<!ENTITY notifier.prefs.groupbox.connection "Forbindelse">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Check for ny email hver">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minutter">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "Automatisk log ind.">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Brug usikre forbindelser">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Konsol">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; Konti">
+<!ENTITY notifier.accounts.listheader.username.label "Brugernavn">
+<!ENTITY notifier.accounts.listheader.online.label "Online">
+<!ENTITY notifier.accounts.listheader.autologin.label "Auto-login">
+<!ENTITY notifier.accounts.listheader.status.label "Status">
+<!ENTITY notifier.accounts.grid.username.label "Brugernavn:">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "Gem">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "g">
+<!ENTITY notifier.accounts.grid.username.password.label "Kodeord:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "k">
+<!ENTITY notifier.accounts.grid.autologin.label "Log automatisk ind.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Rediger bruger">
+<!ENTITY notifier.accounts.buttons.add.label "Tilføj">
+<!ENTITY notifier.accounts.buttons.add.accesskey "i">
+<!ENTITY notifier.accounts.buttons.remove.label "Fjern">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Debug-konsol">
+<!ENTITY notifier.debugconsole.clearButton.label "Ryd">

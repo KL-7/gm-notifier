@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Pengingat Gmail">
+<!ENTITY notifier-about-version.label "Versi">
+<!ENTITY notifier-about-author.label "Penulis">
+<!ENTITY notifier-about-translator.label "Label">
+<!ENTITY notifier-about-translator.name "Nama">
+<!ENTITY notifier-about-legal.label "Ekstensi ini tidak tergabung atau diatur oleh Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name;Masuk">
+<!ENTITY notifier-login-username.label "Nama Pengguna:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "Kata Kunci:">
+<!ENTITY notifier-login-password.accesskey "p">
+<!ENTITY notifier-login-remember-password.label "Ingat kata kunci.">
+<!ENTITY notifier-login-button-login.label "Masuk">
+<!ENTITY gm-notifier-context-menu-prefs.label "Preference">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "Keluar">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "O">
+<!ENTITY gm-notifier-context-menu-checknow.label "Periksa Sekarang">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "C">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Perlihatkan item baris Status">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "S">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Uninstall">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "u">
+<!ENTITY gm-notifier-context-menu-accounts.label "Akoun">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Mengatur">
+<!ENTITY gm-notifier-tooltip-login.label "Klik untuk masuk.">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Masuk sebagai">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; Preferences">
+<!ENTITY notifier.prefs.groupbox.ui "Tampilan pengguna">
+<!ENTITY notifier.prefs.statusbar.show.label "Tunjukkan item baris status">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "pada posisi">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "Saat masuk :">
+<!ENTITY notifier.prefs.load.location "klik pada ikon pengingat untuk membuka Gmail">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "Tab sekarang">
+<!ENTITY notifier.prefs.load.location.new_tab "Tab baru">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "Tab baru yang tidak terpusat">
+<!ENTITY notifier.prefs.load.location.new_window "Jendela baru">
+<!ENTITY notifier.prefs.load.reset_counter.label "reset penghitung ketika ikon pengingat di klik">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "tunjukkan label penurun">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "hanya laporkan surat tidak terbaca di Kotak Masuk">
+<!ENTITY notifier.prefs.counter.type.accesskey "I">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Mungkinkan banyak akoun">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "m">
+<!ENTITY notifier.prefs.groupbox.notifications "Peringatan">
+<!ENTITY notifier.prefs.notification.enable.label "Tunjukkan sistem pengingat untuk surat baru.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "Teruskan menunjukkan sampai jumlah belum terbaca berubah">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "t">
+<!ENTITY notifier.prefs.soundnotification.play.label "Mainkan suara (.wav saja):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "Pilih">
+<!ENTITY notifier.prefs.soundnotification.preview "Tampilkan">
+<!ENTITY notifier.prefs.groupbox.connection "Koneksi">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Periksa surat baru setiap">
+<!ENTITY notifier.prefs.newmail.check.label-2 "menit">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "C">
+<!ENTITY notifier.prefs.autologin "Otomatis masuk.">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Gunakan koneksi tidak aman.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Konsol">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; Akoun">
+<!ENTITY notifier.accounts.listheader.username.label "Nama pengguna">
+<!ENTITY notifier.accounts.listheader.online.label "Online">
+<!ENTITY notifier.accounts.listheader.autologin.label "Otomatis masuk">
+<!ENTITY notifier.accounts.listheader.status.label "Status">
+<!ENTITY notifier.accounts.grid.username.label "Nama Pengguna">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "Simpan">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "s">
+<!ENTITY notifier.accounts.grid.username.password.label "Kata kunci">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "p">
+<!ENTITY notifier.accounts.grid.autologin.label "Otomatis masuk.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Ubah Pengguna">
+<!ENTITY notifier.accounts.buttons.add.label "Tambahkan">
+<!ENTITY notifier.accounts.buttons.add.accesskey "a">
+<!ENTITY notifier.accounts.buttons.remove.label "Singkirkan">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; Konsol">
+<!ENTITY notifier.debugconsole.clearButton.label "Bersihkan">

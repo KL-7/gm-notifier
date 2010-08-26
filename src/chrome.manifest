@@ -1,0 +1,38 @@
+# firefox
+overlay	chrome://browser/content/browser.xul	chrome://gm-notifier/content/gm-ff-overlay.xul
+overlay	chrome://global/content/customizeToolbar.xul	chrome://gm-notifier/content/gm-ff-overlay.xul
+
+# seamonkey (suiterunner)
+overlay	chrome://navigator/content/navigator.xul chrome://gm-notifier/content/gm-suiterunner-overlay.xul
+
+# songbird
+overlay chrome://songbird/content/xul/mainScriptsOverlay.xul chrome://gm-notifier/content/gm-ff-overlay.xul
+
+# general registration
+content	gm-notifier	jar:chrome/gm-notifier.jar!/content/gm-notifier/
+locale gm-notifier en-US jar:chrome/gm-notifier.jar!/locale/en-US/gm-notifier/
+
+locale gm-notifier bg-BG jar:chrome/gm-notifier.jar!/locale/bg-BG/gm-notifier/
+locale gm-notifier ca-AD jar:chrome/gm-notifier.jar!/locale/ca-AD/gm-notifier/
+locale gm-notifier cs-CZ jar:chrome/gm-notifier.jar!/locale/cs-CZ/gm-notifier/
+locale gm-notifier da-DK jar:chrome/gm-notifier.jar!/locale/da-DK/gm-notifier/
+locale gm-notifier es-AR jar:chrome/gm-notifier.jar!/locale/es-AR/gm-notifier/
+locale gm-notifier es-ES jar:chrome/gm-notifier.jar!/locale/es-ES/gm-notifier/
+locale gm-notifier fi-FI jar:chrome/gm-notifier.jar!/locale/fi-FI/gm-notifier/
+locale gm-notifier fr-FR jar:chrome/gm-notifier.jar!/locale/fr-FR/gm-notifier/
+locale gm-notifier he-IL jar:chrome/gm-notifier.jar!/locale/he-IL/gm-notifier/
+locale gm-notifier hu-HU jar:chrome/gm-notifier.jar!/locale/hu-HU/gm-notifier/
+locale gm-notifier id-ID jar:chrome/gm-notifier.jar!/locale/id-ID/gm-notifier/
+locale gm-notifier it-IT jar:chrome/gm-notifier.jar!/locale/it-IT/gm-notifier/
+locale gm-notifier ja-JP jar:chrome/gm-notifier.jar!/locale/ja-JP/gm-notifier/
+locale gm-notifier nb-NO jar:chrome/gm-notifier.jar!/locale/nb-NO/gm-notifier/
+locale gm-notifier nl-NL jar:chrome/gm-notifier.jar!/locale/nl-NL/gm-notifier/
+locale gm-notifier pl-PL jar:chrome/gm-notifier.jar!/locale/pl-PL/gm-notifier/
+locale gm-notifier pt-BR jar:chrome/gm-notifier.jar!/locale/pt-BR/gm-notifier/
+locale gm-notifier pt-PT jar:chrome/gm-notifier.jar!/locale/pt-PT/gm-notifier/
+locale gm-notifier ru-RU jar:chrome/gm-notifier.jar!/locale/ru-RU/gm-notifier/
+locale gm-notifier sv-SE jar:chrome/gm-notifier.jar!/locale/sv-SE/gm-notifier/
+locale gm-notifier sk-SK jar:chrome/gm-notifier.jar!/locale/sk-SK/gm-notifier/
+locale gm-notifier zh-CN jar:chrome/gm-notifier.jar!/locale/zh-CN/gm-notifier/
+locale gm-notifier zh-TW jar:chrome/gm-notifier.jar!/locale/zh-TW/gm-notifier/
+

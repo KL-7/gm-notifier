@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+<?xul-overlay href="chrome://gm-notifier/content/gm-core-overlay.xul"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<overlay id="gm-sm-overlay" 
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-sm-uninstaller.js"/>
+
+  <popupset id="bookmarksPopupset">
+    <popup id="gm-context-menu">
+      <menuitem collapsed="true" id="gm-context-menu-statusbar-item"/>
+      <menuitem id="gm-context-menu-check-now"/>
+      <menuitem id="gm-context-menu-logout"/>
+      <menuseparator id="gm-context-menu-logout-seperator"/>
+      <menuitem id="gm-notifier-context-menu-prefs" />
+      <menuseparator/>
+      <menuitem label="&gm-notifier-context-menu-uninstall.label;" 
+                accesskey="&gm-notifier-context-menu-uninstall.accesskey;"
+                oncommand="gm_notifier_uninstall()"/>
+    </popup>
+  </popupset>
+</overlay>

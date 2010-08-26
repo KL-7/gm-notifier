@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://gm-notifier/content/gm-notifier.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://gm-notifier/locale/gm-notifier.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&notifier.prefs.name;"
+        buttons="accept, cancel, extra2"
+        style="padding:0px; margin:0px;"
+        ondialogaccept="wm_prefs_accept()" onload="wm_prefs_load()"
+        buttonlabelextra2="&notifier.prefs.debugconsole.value;">
+
+  <script type="application/x-javascript" src="chrome://gm-notifier/content/gm-prefs.js"/>
+  <script>
+    <![CDATA[
+    var wm_prefs;
+    var prefarray;
+
+    function initPrefs() {
+      prefarray = [ { id: "prefs.update.interval", name: wm_prefs.PREF_UPDATE_INTERVAL, type: "int" },
+                    { id: "prefs.gmload.location", name: wm_prefs.PREF_LOAD_LOCATION, type: "int" },
+                    { id: "prefs.load.reset_counter", name: wm_prefs.PREF_LOAD_RESET_COUNTER, type: "bool" },
+                    { id: "prefs.autologin.enabled", name: wm_prefs.PREF_AUTOLOGIN_ENABLED, type: "bool" },
+                    { id: "prefs.ui.notification.enabled", name: wm_prefs.PREF_NOTIFICATIONS_ENABLED, type: "bool" },
+                    { id: "prefs.ui.soundnotification.textbox", name: wm_prefs.PREF_SOUNDNOTIFICATIONS_URI, type: "char" },
+                    { id: "prefs.ui.folderview.enabled", name: wm_prefs.PREF_USE_FOLDERVIEW, type: "bool" },
+                    { id: "prefs.counter.type", name: wm_prefs.PREF_COUNTER_SHOW_INBOX, type: "bool" },
+                    { id: "prefs.statusbar.enabled", name: wm_prefs.PREF_STATUSBAR_ENABLED, type: "bool" },
+                    { id: "prefs.ui.soundnotification.enabled", name: wm_prefs.PREF_SOUNDNOTIFICATIONS_ENABLED, type: "bool" },
+                    { id: "prefs.use.unsecure.connection", name: wm_prefs.PREF_UNSECURED_CONNECTION, type: "bool" },
+                    { id: "prefs.ui.multiaccount.enabled", name: wm_prefs.PREF_MULTIACCOUNT_ENABLED, type: "bool" },
+                    { id: "prefs.ui.notification.repeat", name: wm_prefs.PREF_NOTIFICATIONS_REPEAT, type: "bool" }
+                  ];
+
+      for (i in prefarray) {
+        setPreference(prefarray[i]);
+      }
+    }
+
+    function setPreference(aPref) {
+      if (aPref) {
+        var elm = document.getElementById(aPref.id);
+        var value;
+
+        if (aPref.type == "int")
+          value = wm_prefs.getIntPref(aPref.name);
+        else if (aPref.type == "bool")
+          value = wm_prefs.getBoolPref(aPref.name);
+        else if (aPref.type == "char")
+          value = wm_prefs.getCharPref(aPref.name);
+
+        setPreferenceUIValue(elm, value);
+      }
+    }
+
+    function setPreferenceUIValue(aElement, aValue) {
+      var localName = aElement.localName;
+
+      if (localName == "textbox") {
+        aElement.value = aValue;
+      } else if (localName == "menulist") {
+        aElement.selectedIndex = aValue;
+      } else if (localName == "checkbox") {
+        aElement.checked = aValue;
+      }
+    }
+
+    // saving
+
+    function savePrefs() {
+      for (i in prefarray) {
+        if (prefarray[i].id == "prefs.update.interval") {
+          var interval = document.getElementById("prefs.update.interval").value;
+          if (!isNaN(interval) && parseInt(interval) >= 1) {
+            savePreference(prefarray[i]);
+          }
+        } else {
+          savePreference(prefarray[i]);
+        }
+      }
+    }
+
+    function savePreference(aPref) {
+      if (aPref) {
+        var elm = document.getElementById(aPref.id);
+        var value = getValue(elm);
+
+        if (aPref.type == "int")
+          wm_prefs.setIntPref(aPref.name, value);
+        else if (aPref.type == "bool")
+          wm_prefs.setBoolPref(aPref.name, value);
+        else if (aPref.type == "char")
+          wm_prefs.setCharPref(aPref.name, value);
+      }
+    }
+
+    function getValue(aElement) {
+      var localName = aElement.localName;
+      var value;
+
+      if (localName == "textbox") {
+        value = aElement.value;
+      } else if (localName == "menulist") {
+        value = aElement.selectedIndex;
+      } else if (localName == "checkbox") {
+        value = aElement.checked;
+      }
+
+      return value;
+    }
+
+    function wm_prefs_load(){
+      wm_prefs = new gm_prefs();
+
+      initPrefs();
+
+      toggleShowStatusbar();
+
+      if (!supportsMultiMode()) {
+        document.getElementById("multiAccountHbox").collapsed = true;
+      }
+
+      var position = wm_prefs.getIntPref(wm_prefs.PREF_STATUSBAR_POSITION);
+      if (position > 0)
+        document.getElementById("prefs.statusbar.position").value = position;
+
+      toogleSoundNotification();
+
+      // hide the system notification item if the alert service and growl is not present
+      if (!("@mozilla.org/alerts-service;1" in Components.classes) && !("@growl.info/notifications;1" in Components.classes))
+        document.getElementById("prefs.ui.notification.enabled").collapsed = true;
+
+      // manage accounts button
+      var value = wm_prefs.getBoolPref(wm_prefs.PREF_MULTIACCOUNT_ENABLED);
+      document.getElementById("prefs.ui.multiaccount.accounts.button").disabled = !value;
+
+      updateManageAccountsButton();
+      updateNotificationButton();
+
+      // console button
+      var button = document.documentElement.getButton("extra2");
+      button.addEventListener("command", showDebugConsole, false);
+      button.setAttribute("icon", "help");
+    }
+
+    function toogleSoundNotification() {
+      var value = document.getElementById("prefs.ui.soundnotification.enabled").checked;
+      document.getElementById("prefs.ui.soundnotification.textbox").disabled = !value;
+      document.getElementById("prefs.ui.soundnotification.select").disabled = !value;
+      updatePreviewButton();
+    }
+
+    function wm_prefs_accept(){
+      savePrefs();
+
+      var position = document.getElementById("prefs.statusbar.position").value;
+      if (isNaN(parseInt(position)) || position.value < 1) {
+        position = 0;
+      }
+
+      wm_prefs.setIntPref(wm_prefs.PREF_STATUSBAR_POSITION, position);
+    }
+
+    function selectSound() {
+      var nsIFilePicker = Components.interfaces.nsIFilePicker;
+      var filepicker = Components.classes["@mozilla.org/filepicker;1"]
+                                 .createInstance(nsIFilePicker);
+
+      // get dialog title from bundle
+      var strbundle = document.getElementById("stringbundle");
+
+      filepicker.init(window, strbundle.getString("ChooseSoundDialogTitle"), nsIFilePicker.modeOpen);
+      filepicker.appendFilters(nsIFilePicker.filterAll);
+      var ret = filepicker.show();
+      if (ret == nsIFilePicker.returnOK) {
+        document.getElementById("prefs.ui.soundnotification.textbox").value = filepicker.file.path;
+      }
+
+      updatePreviewButton();
+    }
+
+    function updatePreviewButton() {
+      if ((document.getElementById("prefs.ui.soundnotification.enabled").checked) && (document.getElementById("prefs.ui.soundnotification.textbox").value != ""))
+        document.getElementById("prefs.ui.soundnotification.preview").disabled = false;
+      else
+        document.getElementById("prefs.ui.soundnotification.preview").disabled = true;
+    }
+
+    function previewSound() {
+      var soundUrl = document.getElementById("prefs.ui.soundnotification.textbox").value;
+
+      try {
+        var sound = Components.classes["@mozilla.org/sound;1"]
+                              .createInstance(Components.interfaces.nsISound);
+        sound.init();
+
+        var shortname = soundUrl.substr(0, 7);
+
+        if (shortname == "http://" || shortname == "https:/") {
+          var url = Components.classes["@mozilla.org/network/standard-url;1"]
+                              .createInstance(Components.interfaces.nsIURL);
+          url.spec = soundUrl;
+          sound.play(url);
+        } else {
+          var localFile = Components.classes["@mozilla.org/file/local;1"]
+                             .createInstance(Components.interfaces.nsILocalFile);
+          localFile.initWithPath(soundUrl);
+
+          var ios = Components.classes["@mozilla.org/network/io-service;1"]
+                              .getService(Components.interfaces.nsIIOService);
+          sound.play(ios.newFileURI(localFile));
+        }
+      } catch (e) {
+        // XXX should alert a message?
+        alert(e);
+      }
+   }
+
+    function toggleShowStatusbar() {
+      var value = document.getElementById("prefs.statusbar.enabled").checked;
+      document.getElementById("prefs.statusbar.position").disabled = !value;
+    }
+
+    function updateManageAccountsButton() {
+      var value = document.getElementById("prefs.ui.multiaccount.enabled").checked;
+      document.getElementById("prefs.ui.multiaccount.accounts.button").disabled = !value;
+    }
+
+    function manageAccounts() {
+      window.openDialog("chrome://gm-notifier/content/gm-accounts.xul", "gm-notifier:accounts", "centerscreen,chrome,resizable=no,dependent=yes");
+    }
+
+    function showDebugConsole() {
+      window.openDialog('chrome://gm-notifier/content/console.xul', '_blank', 'chrome,resizable=no,dependent=yes')
+    }
+
+    function supportsMultiMode() {
+      var supports = false;
+
+      try {
+        var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+                                .getService(Components.interfaces.nsIXULAppInfo);
+
+        if (appInfo.platformVersion >= "1.8.1")
+          supports = true;
+      } catch (e) {}
+
+      return supports;
+    }
+
+    function updateNotificationButton() {
+      var checked = document.getElementById("prefs.ui.notification.enabled").checked;
+
+      document.getElementById("prefs.ui.notification.repeat").disabled = !checked;
+    }
+
+    ]]>
+  </script>
+
+  <stringbundle id="stringbundle" src="chrome://gm-notifier/locale/gm-notifier.properties"/>
+
+  <description value="&notifier.prefs.name;" class="notifier-dialog-title"
+               style="min-width:400px;"/>
+
+  <groupbox>
+    <caption label="&notifier.prefs.groupbox.ui;"/>
+    <hbox>
+      <checkbox id="prefs.statusbar.enabled"
+                label="&notifier.prefs.statusbar.show.label;" 
+                accesskey="&notifier.prefs.statusbar.show.accesskey;"
+                oncommand="toggleShowStatusbar()"/>
+      <spacer flex="1"/>
+    </hbox>
+
+    <hbox class="indent" align="center">
+      <label value="&notifier.prefs.statusbar.position.label;"
+             accesskey="&notifier.prefs.statusbar.position.accesskey;"
+             control="prefs.statusbar.position"/>
+      <textbox id="prefs.statusbar.position" style="width:2em;" maxlength="2"
+               value=""/>
+    </hbox>
+
+    <label style="margin-top:5px;" value="&notifier.prefs.logged_in.label;"/>
+
+    <vbox class="indent">
+      <hbox align="center">
+        <label value="&notifier.prefs.load.location;" control="prefs.gmload.location"
+               accesskey="&notifier.prefs.load.location.accesskey;"/>
+        <menulist id="prefs.gmload.location">
+          <menupopup>
+            <menuitem value="0" label="&notifier.prefs.load.location.current_tab;"/>
+            <menuitem value="1" label="&notifier.prefs.load.location.new_tab;"/>
+            <menuitem value="2" label="&notifier.prefs.load.location.new_window;"/>
+            <menuitem value="3" label="&notifier.prefs.load.location.new_unfocused_tab;"/>
+          </menupopup>
+        </menulist>
+      </hbox>
+
+      <checkbox id="prefs.ui.folderview.enabled" label="&notifier.prefs.load.folderUI.label;"
+                accesskey="&notifier.prefs.load.folderUI.accesskey;"/>
+
+      <checkbox id="prefs.load.reset_counter"
+                label="&notifier.prefs.load.reset_counter.label;"
+                accesskey="&notifier.prefs.load.reset_counter.accesskey;"/>
+
+       <checkbox id="prefs.counter.type"
+                 label="&notifier.prefs.counter.type.label;"
+                 accesskey="&notifier.prefs.counter.type.accesskey;"/>
+    </vbox>
+
+    <hbox id="multiAccountHbox">
+      <checkbox id="prefs.ui.multiaccount.enabled"
+                label="&notifier.prefs.ui.multiaccount.label;"
+                accesskey="&notifier.prefs.ui.multiaccount.accesskey;"
+                oncommand="updateManageAccountsButton()"/>
+      <button id="prefs.ui.multiaccount.accounts.button" label="Accounts"
+              oncommand="manageAccounts();"/>
+    </hbox>
+  </groupbox>
+
+  <groupbox>
+    <caption label="&notifier.prefs.groupbox.notifications;"/>
+    <checkbox id="prefs.ui.notification.enabled"
+              label="&notifier.prefs.notification.enable.label;"
+              accesskey="&notifier.prefs.notification.enable.accesskey;"
+              oncommand="updateNotificationButton()"/>
+
+    <hbox align="center" class="indent">
+      <checkbox id="prefs.ui.notification.repeat"
+                label="&notifier.prefs.notification.repeat.label;"
+                accesskey="&notifier.prefs.notification.repeat.accesskey;"/>
+    </hbox>
+
+    <checkbox id="prefs.ui.soundnotification.enabled"
+              label="&notifier.prefs.soundnotification.play.label;"
+              accesskey="&notifier.prefs.soundnotification.play.accesskey;"
+              oncommand="toogleSoundNotification()"/>
+    <hbox align="center" class="indent">
+      <textbox id="prefs.ui.soundnotification.textbox" onkeyup="updatePreviewButton()" flex="1"/>
+      <button id="prefs.ui.soundnotification.select"
+              label="&notifier.prefs.soundnotification.select;"
+              oncommand="selectSound()"/>
+      <button id="prefs.ui.soundnotification.preview"
+              label="&notifier.prefs.soundnotification.preview;"
+              oncommand="previewSound()"/>
+    </hbox>
+  </groupbox>
+
+  <groupbox>
+    <caption label="&notifier.prefs.groupbox.connection;"/>
+    <hbox align="center">
+      <label value="&notifier.prefs.newmail.check.label-1;"
+             accesskey="&notifier.prefs.newmail.check.label-1.accesskey;"
+             control="prefs.update.interval"/>
+      <textbox id="prefs.update.interval" style="width:3em;" maxlength="4" value=""/>
+      <label value="&notifier.prefs.newmail.check.label-2;" />
+    </hbox>
+
+    <checkbox id="prefs.autologin.enabled" label="&notifier.prefs.autologin;"
+              accesskey="&notifier.prefs.autologin.accesskey;"/>
+
+    <checkbox id="prefs.use.unsecure.connection" label="&notifier.prefs.use.unsecure.connection.label;"
+              accesskey="&notifier.prefs.use.unsecure.connection.accesskey;"/>
+  </groupbox>
+</dialog>

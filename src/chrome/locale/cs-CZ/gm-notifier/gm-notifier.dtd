@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifikátor">
+<!ENTITY notifier-about-version.label "Verze">
+<!ENTITY notifier-about-author.label "Autor">
+<!ENTITY notifier-about-translator.label "Přeložil">
+<!ENTITY notifier-about-translator.name "PetrTwo">
+<!ENTITY notifier-about-legal.label "Toto rozšíření není oficiálně sdruženo nebo podporováno společností Google.">
+<!ENTITY notifier-login.title "&gm-notifier.name; - Přihlášení">
+<!ENTITY notifier-login-username.label "Uživatelské jméno:">
+<!ENTITY notifier-login-username.accesskey "u">
+<!ENTITY notifier-login-password.label "Heslo:">
+<!ENTITY notifier-login-password.accesskey "h">
+<!ENTITY notifier-login-remember-password.label "Zapamatovat heslo.">
+<!ENTITY notifier-login-button-login.label "Přihlásit">
+<!ENTITY gm-notifier-context-menu-prefs.label "Předvolby">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "p">
+<!ENTITY gm-notifier-context-menu-logout.label "Odhlásit se">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "o">
+<!ENTITY gm-notifier-context-menu-checknow.label "Zkontrolovat nyní">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "z">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Zobrazit položku ve stavovém řádku">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "s">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Odinstalovat">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "d">
+<!ENTITY gm-notifier-context-menu-accounts.label "Účty">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Spravovat">
+<!ENTITY gm-notifier-tooltip-login.label "Klepněte pro přihlášení">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Přihlášen jako">
+<!ENTITY notifier.prefs.name "&gm-notifier.name; - Možnosti">
+<!ENTITY notifier.prefs.groupbox.ui "Uživatelské rozhraní">
+<!ENTITY notifier.prefs.statusbar.show.label "Zobrazit ikonu ve stavovém řádku">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "s">
+<!ENTITY notifier.prefs.statusbar.position.label "na pozici">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "o">
+<!ENTITY notifier.prefs.logged_in.label "Když je uživatel přihlášen:">
+<!ENTITY notifier.prefs.load.location "klepnutím na ikonu notifikátoru otevřít Gmail v">
+<!ENTITY notifier.prefs.load.location.accesskey "G">
+<!ENTITY notifier.prefs.load.location.current_tab "současném panelu">
+<!ENTITY notifier.prefs.load.location.new_tab "novém panelu">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "novém panelu na pozadí">
+<!ENTITY notifier.prefs.load.location.new_window "novém okně">
+<!ENTITY notifier.prefs.load.reset_counter.label "resetovat počítadlo po klepnutí na ikonu.">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "r">
+<!ENTITY notifier.prefs.load.folderUI.label "zobrazit rozšířenou verzi ikony pro nástrojovou lištu.">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "l">
+<!ENTITY notifier.prefs.counter.type.label "oznamovat pouze nepřečtené zprávy v Doručené poště.">
+<!ENTITY notifier.prefs.counter.type.accesskey "D">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Povolit více účtů">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "v">
+<!ENTITY notifier.prefs.groupbox.notifications "Oznámení">
+<!ENTITY notifier.prefs.notification.enable.label "Zobrazit systémové oznámení nové zprávy.">
+<!ENTITY notifier.prefs.notification.enable.accesskey "n">
+<!ENTITY notifier.prefs.notification.repeat.label "Zobrazovat dokud se nezmění počet nepřečtených zpráv.">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "Z">
+<!ENTITY notifier.prefs.soundnotification.play.label "Přehrát zvuk (pouze *.wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "P">
+<!ENTITY notifier.prefs.soundnotification.select "Zvolit">
+<!ENTITY notifier.prefs.soundnotification.preview "Přehrát">
+<!ENTITY notifier.prefs.groupbox.connection "Spojení">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Kontrolovat nové zprávy každých">
+<!ENTITY notifier.prefs.newmail.check.label-2 "minut.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "K">
+<!ENTITY notifier.prefs.autologin "Přihlašovat automaticky.">
+<!ENTITY notifier.prefs.autologin.accesskey "a">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Použít nezabezpečená spojení.">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "u">
+<!ENTITY notifier.prefs.debugconsole.value "Konzola">
+<!ENTITY notifier.accounts.window.title "&gm-notifier.name; - Účty">
+<!ENTITY notifier.accounts.listheader.username.label "Uživatelské jméno">
+<!ENTITY notifier.accounts.listheader.online.label "Přihlášeno">
+<!ENTITY notifier.accounts.listheader.autologin.label "Automatické přihlášení">
+<!ENTITY notifier.accounts.listheader.status.label "Stav">
+<!ENTITY notifier.accounts.grid.username.label "Uživatelské jméno">
+<!ENTITY notifier.accounts.grid.username.accesskey "u">
+<!ENTITY notifier.accounts.grid.username.save.label "Uložit">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "l">
+<!ENTITY notifier.accounts.grid.username.password.label "Heslo:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "s">
+<!ENTITY notifier.accounts.grid.autologin.label "Přihlásit automaticky.">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "o">
+<!ENTITY notifier.accounts.groupbox.label "Upravit uživatele">
+<!ENTITY notifier.accounts.buttons.add.label "Přidat">
+<!ENTITY notifier.accounts.buttons.add.accesskey "P">
+<!ENTITY notifier.accounts.buttons.remove.label "Odstranit">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "r">
+<!ENTITY notifier.debugconsole.title "&gm-notifier.name; - Konzola">
+<!ENTITY notifier.debugconsole.clearButton.label "Vyčistit">

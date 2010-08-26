@@ -1,0 +1,86 @@
+<!ENTITY gm-notifier.name "Gmail Notifier">
+<!ENTITY notifier-about-version.label "Verzió">
+<!ENTITY notifier-about-author.label "Készítő">
+<!ENTITY notifier-about-translator.label "Fordító">
+<!ENTITY notifier-about-translator.name "gLes">
+<!ENTITY notifier-about-legal.label "A kiterjesztés készítője nem áll semmilyen kapcsolatban a Google-lal.">
+<!ENTITY notifier-login.title "Gmail bejelentkezés">
+<!ENTITY notifier-login-username.label "Felhasználó név:">
+<!ENTITY notifier-login-username.accesskey "F">
+<!ENTITY notifier-login-password.label "Jelszó:">
+<!ENTITY notifier-login-password.accesskey "J">
+<!ENTITY notifier-login-remember-password.label "Jelszó megjegyzése">
+<!ENTITY notifier-login-button-login.label "Bejelentkezés">
+<!ENTITY gm-notifier-context-menu-prefs.label "Beállítások">
+<!ENTITY gm-notifier-context-menu-prefs.accesskey "B">
+<!ENTITY gm-notifier-context-menu-logout.label "Kijelentkezés">
+<!ENTITY gm-notifier-context-menu-logout.accesskey "K">
+<!ENTITY gm-notifier-context-menu-checknow.label "Ellenőrzés most">
+<!ENTITY gm-notifier-context-menu-checknow.accesskey "E">
+<!ENTITY gm-notifier-context-menu-showstatusbar.label "Megjelenítés az állapotsoron">
+<!ENTITY gm-notifier-context-menu-showstatusbar.accesskey "M">
+<!ENTITY gm-notifier-context-menu-uninstall.label "Eltávolítás">
+<!ENTITY gm-notifier-context-menu-uninstall.accesskey "E">
+<!ENTITY gm-notifier-context-menu-accounts.label "Fiókok">
+<!ENTITY gm-notifier-context-menu-accounts-manage.label "Kezelés">
+<!ENTITY gm-notifier-tooltip-login.label "Kattintson ide a bejelentkezéshez">
+<!ENTITY gm-notifier-tooltip-logged-in-as.label "Bejelentkezve mint">
+<!ENTITY notifier.prefs.name "Gmail értesítő beállítások">
+<!ENTITY notifier.prefs.groupbox.ui "Felhasználói felület">
+<!ENTITY notifier.prefs.statusbar.show.label "Megjelenítés az állapotsoron">
+<!ENTITY notifier.prefs.statusbar.show.accesskey "M">
+<!ENTITY notifier.prefs.statusbar.position.label "pozíció:">
+<!ENTITY notifier.prefs.statusbar.position.accesskey "P">
+<!ENTITY notifier.prefs.logged_in.label "Amikor be van jelentkezve:">
+<!ENTITY notifier.prefs.load.location "Az értesítő ikonra kattintva a Gmail nyíljon meg">
+<!ENTITY notifier.prefs.load.location.accesskey "I">
+<!ENTITY notifier.prefs.load.location.current_tab "az aktuális fülön">
+<!ENTITY notifier.prefs.load.location.new_tab "új fülön">
+<!ENTITY notifier.prefs.load.location.new_unfocused_tab "új inaktív fülön">
+<!ENTITY notifier.prefs.load.location.new_window "új ablakban">
+<!ENTITY notifier.prefs.load.reset_counter.label "Számláló nullázása az értesítőikonra való kattintáskor">
+<!ENTITY notifier.prefs.load.reset_counter.accesskey "S">
+<!ENTITY notifier.prefs.load.folderUI.label "A címke legördülő menü megjelenítése">
+<!ENTITY notifier.prefs.load.folderUI.accesskey "c">
+<!ENTITY notifier.prefs.counter.type.label "Csak olvasatlan levelek jelzése a Beérkező levelek mappában">
+<!ENTITY notifier.prefs.counter.type.accesskey "o">
+<!ENTITY notifier.prefs.ui.multiaccount.label "Több fiók kezelése">
+<!ENTITY notifier.prefs.ui.multiaccount.accesskey "T">
+<!ENTITY notifier.prefs.groupbox.notifications "Értesítések">
+<!ENTITY notifier.prefs.notification.enable.label "Rendszerértesítés megjelenítése új levél érkezésekor">
+<!ENTITY notifier.prefs.notification.enable.accesskey "l">
+<!ENTITY notifier.prefs.notification.repeat.label "Ismétlődjön, amíg az olvasatlan levelek száma nem csökken">
+<!ENTITY notifier.prefs.notification.repeat.accesskey "v">
+<!ENTITY notifier.prefs.soundnotification.play.label "Hang lejátszása (csak .wav):">
+<!ENTITY notifier.prefs.soundnotification.play.accesskey "H">
+<!ENTITY notifier.prefs.soundnotification.select "Tallózás">
+<!ENTITY notifier.prefs.soundnotification.preview "Lejátszás">
+<!ENTITY notifier.prefs.groupbox.connection "Kapcsolat">
+<!ENTITY notifier.prefs.newmail.check.label-1 "Új levelek ellenőrzése">
+<!ENTITY notifier.prefs.newmail.check.label-2 "percenként.">
+<!ENTITY notifier.prefs.newmail.check.label-1.accesskey "j">
+<!ENTITY notifier.prefs.autologin "Automatikus bejelentkezés">
+<!ENTITY notifier.prefs.autologin.accesskey "A">
+<!ENTITY notifier.prefs.use.unsecure.connection.label "Titkosítatlan kapcsolat használata">
+<!ENTITY notifier.prefs.use.unsecure.connection.accesskey "k">
+<!ENTITY notifier.prefs.debugconsole.value "Konzol">
+<!ENTITY notifier.accounts.window.title "Gmail fiókok">
+<!ENTITY notifier.accounts.listheader.username.label "Név">
+<!ENTITY notifier.accounts.listheader.online.label "Aktív">
+<!ENTITY notifier.accounts.listheader.autologin.label "Aut. bejelentkezés">
+<!ENTITY notifier.accounts.listheader.status.label "Állapot">
+<!ENTITY notifier.accounts.grid.username.label "Felhasználói név:">
+<!ENTITY notifier.accounts.grid.username.accesskey "F">
+<!ENTITY notifier.accounts.grid.username.save.label "Mentés">
+<!ENTITY notifier.accounts.grid.username.save.accesskey "S">
+<!ENTITY notifier.accounts.grid.username.password.label "Jelszó:">
+<!ENTITY notifier.accounts.grid.username.password.accesskey "J">
+<!ENTITY notifier.accounts.grid.autologin.label "Automatikus bejelentkezés">
+<!ENTITY notifier.accounts.grid.autologin.accesskey "A">
+<!ENTITY notifier.accounts.groupbox.label "Fiók adatai">
+<!ENTITY notifier.accounts.buttons.add.label "Hozzáadás">
+<!ENTITY notifier.accounts.buttons.add.accesskey "H">
+<!ENTITY notifier.accounts.buttons.remove.label "Eltávolítás">
+<!ENTITY notifier.accounts.buttons.remove.accesskey "E">
+<!ENTITY notifier.debugconsole.title "Gmail értesítő hibakonzol">
+<!ENTITY notifier.debugconsole.clearButton.label "Alaphelyzet">
