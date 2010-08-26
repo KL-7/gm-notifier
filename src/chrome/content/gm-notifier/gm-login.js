@@ -70,6 +70,9 @@ function onLoad() {
     document.getElementById("password").value = window.opener.gGMailNotifier.getLoginDetails(username);
     document.getElementById("store-password").checked =
       window.opener.gGMailNotifier.wm_prefs.getBoolPref("gm-notifier.users.remember-password");
+	if (!document.getElementById("password").value) {
+	  document.getElementById("password").focus()
+	}
   }
 }
 
